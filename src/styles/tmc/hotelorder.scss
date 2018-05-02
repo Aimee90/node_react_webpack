@@ -1,0 +1,341 @@
+@import "../global-m.scss";
+@import "../base/tmc-animation.scss";
+@import "../module/tmc-cover.scss";
+@import "../base/imgURL.scss";
+.price{
+  color: $highlight-color;
+  font-size: 14px;
+  .rmb{
+    font-size: 12px;
+  }
+}
+.icon-arrow-slide{
+  width: 26px;
+  height: 18px;
+  background: url($imgURL_org + '/tmc/tmc-sprite-arrow.png') no-repeat 11px -29px;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transition: .3s ease-in-out;
+}
+.extend-in .icon-arrow-slide{
+  background-position: 8px -29px;
+  transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+}
+.m-content{
+  width: 100%;
+  background: #fff;
+  padding: 12px 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  & > div.title{
+    font-size: 14px;
+    color: #333;
+    border-left: 4px solid $main-color;
+    padding-left: 10px;
+  }
+}
+.m-state{
+  background: $main-color;
+  width: 100%;
+  height: 120px;
+  padding: 5px 10px;
+  overflow: hidden;
+}
+.state-con{
+  width: 100%;
+  .title{
+    background: #fff;
+    padding-left: 10px;
+    border-radius: 4px 4px 0 0;
+    line-height: 45px;
+    height: 45px;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 14px;
+    color: #333;
+  }
+  .step-con{
+    background: #f2f4f7;
+    padding: 5px 10px 10px 10px;
+    font-size: 12px;
+    color: #9b9b9b;
+    border-radius: 0 0 4px 4px;
+    height: 60px;
+  }
+  .step{
+    float: left;
+    position: relative;
+    height: 45px;
+    width: 32%;
+    text-align: center;
+    & > p{
+        display: inline-block;
+        vertical-align: top;
+    }
+    .step-text{
+      position: absolute;
+      font-size: 12px;
+      width: 48px;
+      text-align: center;
+      top: 6px;
+      left: 50%;
+      margin-left: -24px;
+    }
+    .line{
+      margin-top: 38px;
+    }
+
+    .line{
+      height: 2px;
+      width: 44%;
+      background: #d8d8d8;
+      &:first-child{
+        float: left;
+      }
+      &:last-child{
+        float: right;
+      }
+    }
+    span{
+      display: inline-block;
+      vertical-align: top;
+      width: 4px;
+      height: 4px;
+      background: #d2d3d6;
+      border-radius: 2px;
+      margin-top: 37px;
+      margin-left:  2px;
+      margin-right: 2px;
+    }
+    &:first-child{
+      width: 18%;
+      text-align: right;
+      .step-text{
+        text-align: right;
+      }
+      .line{
+        width: 70%;
+      }
+      .line:first-child{
+        display: none;
+      }
+    }
+    &:last-child{
+      width: 18%;
+      text-align: left;
+      .step-text{
+        text-align: right;
+      }
+      .line{
+        width: 70%;
+      }
+      .line:last-child{
+        display: none;
+      }
+    }
+    &.active{
+      .step-text{
+        color: $main-color;
+      }
+      .line{
+        background: $main-color;
+      }
+      span{
+        background: $main-color;
+      }
+    }
+  }
+}
+.m-hotel{
+  .title{
+    font-size: 16px;
+    color: #333;
+    line-height: 30px;
+  }
+  .info{
+    font-size: 12px;
+    color: #999;
+    line-height: 20px;
+  }
+}
+.m-basic{
+  padding: 12px 0;
+   & > div.date{
+     border-bottom: 1px dashed #eee;
+     padding-left: 10px;
+     padding-right: 10px;
+     padding-bottom: 10px;
+        & > div{
+          float: left;
+          width: 33.3%;
+          text-align: center;
+        }
+     & > div.start,
+     & > div.end{
+       text-align: left;
+       padding-left: 10px;
+     }
+     p{
+       line-height: 25px;
+     }
+     p.date{
+       color: #666;
+       font-size: 16px;
+       font-family:Arial;
+     }
+     p.line{
+       height: 1px;
+       width: 80%;
+       background: #d8d8d8;
+       margin: 5px auto;
+     }
+     .duration{
+       span{
+         font-size: 12px;
+         color: #999;
+       }
+     }
+   }
+   & > div.tip{
+      padding: 7.5px 10px;
+      font-size: 12px;
+      color: #999;
+      line-height: 20px;
+   }
+   & > div.cancel-rule{
+       border-top:1px solid #eee;
+   }
+  .opt a{
+      display: inline-block;
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      font-size: 14px;
+      color: $main-font-color;
+  }
+}
+.m-bill,
+.m-order,
+.m-approve,
+.m-costCenter,
+.m-project,
+.m-cause{
+  .info{
+     font-size: 12px;
+    color: #666;
+     line-height: 20px;
+    padding: 10px 10px 0 10px;
+    .more-info{
+      display: none;
+    }
+    &.extend-in .more-info{
+      display: block;
+    }
+    .opt-showmore{
+      display: inline-block;
+      vertical-align: top;
+      line-height: 20px;
+      width: 100%;
+      text-align: center;
+      color: $main-font-color;
+    }
+  }
+}
+.m-bill{
+  .info{
+    .more-info{
+      margin-top: 10px;
+       display: none;
+    }
+    &.extend-in .more-info{
+      display: block;
+    }
+  }
+}
+.tmc-refund-cover{
+    background: #eee;
+    .refund-item {
+        width: 100%;
+        font-size: 12px;
+        margin-bottom: 10px;
+        background: #fff;
+        color: #666;
+      padding: 10px;
+      line-height: 25px;
+      .price{
+        font-size: 12px;
+      }
+      .price i{
+        font-size: 12px;
+      }
+      .date{
+        font-size: 12px;
+        color: #999;
+        .summary{
+          margin-left: 5px;
+        }
+      }
+      .pass,
+      .date{
+        width: 65%;
+      }
+      .bill,
+      .state{
+        width: 35%;
+      }
+    }
+}
+
+
+
+.label-reason{
+	float: left;
+    margin-top: 10px;
+}
+.slt-reason{
+	width: 94%;
+}
+.other-reason{
+	border: 1px solid #e3e3e3;
+    margin: 10px;
+    width: 94%;
+    min-height: 100px;
+    padding:4px;
+}
+
+.tmc-confirm-footer {
+  background: #fff;
+  border-top: 1px solid #ddd;
+  z-index: 1051;
+  &>.confirm-time{
+    float: left;
+    line-height: 50px;
+    padding: 0 10px;
+    font-size: 14px;
+    color: #333;
+    max-width: 320px;
+    &>.timer{
+      margin:0 5px;
+      color: $highlight-color;
+    }
+  }
+  &>button{
+    &.btn-next{
+      margin-left: 3%;
+      width: 30%;
+      background: #d6b864;
+      color: #fff;
+      font-size: 16px;
+      white-space: nowrap;
+      height: 100%;
+      position: absolute;
+      right: 0;
+    }
+  }
+}

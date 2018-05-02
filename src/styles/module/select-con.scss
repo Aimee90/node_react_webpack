@@ -1,0 +1,24 @@
+.select-con{
+	width: 100%;
+	.select-item{
+		position: relative;
+		height: 46px;
+		line-height: 46px;
+		white-space: nowrap;
+        border-bottom: 1px solid #e8e8e8;
+        .icon-dui{
+        	display: none;
+        	position: absolute;
+        	top: 20px;
+        	right: 2%;
+        	width: 15px;
+        	height: 10px;
+        	background: url($imgURL_org + '/tmc/dui.png') no-repeat;
+        }
+        &.selected{
+        	.icon-dui{
+        		display: block;
+        	}
+        }
+	}
+}

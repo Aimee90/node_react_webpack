@@ -1,0 +1,565 @@
+/**
+** 国内酒店页面样式
+** @author fanjiejing
+** @date 2017-40-17
+**/
+@import "../global-m.scss";
+@import "../base/tmc-animation.scss";
+@import "../module/tmc-cover.scss";
+@import "../components/tmc-tab.scss";
+@import "../module/autoinput-con.scss";
+@import "../base/imgURL.scss";
+.price{
+	color: $highlight-color;
+}
+.btn-search{
+	border-radius:4px;
+	width: 100%;
+	height:40px;
+	font-size: 18px;
+	margin: 10px 0 20px 0;
+	line-height: 1;
+}
+.select-box{
+	display: inline-block;
+	vertical-align: middle;
+	height: 18px;
+	width: 18px;
+	border: 1px solid $main-color;
+	border-radius: 4px;
+}
+.active .select-box{
+	background: url($icons01) -163px -72px no-repeat;
+}
+.icon-next {
+	position: absolute;
+    margin-top: -10px;
+    width: 16px;
+    height: 20px;
+    background: url($imgURL_org + '/tmc/tmc-sprite-arrow.png') 0 -25px no-repeat;
+    top: 50%;
+    right: 0;
+}
+.m-bg{
+	width: 100%;
+	height: 170px;
+	background: url($imgURL_org + '/tmc/hotelindex-bg.png') no-repeat;
+	background-size: cover;
+}
+.m-search{
+	margin: -50px 3% 0;
+	padding: 0 10px;
+    width: 94%;
+    height: 320px;
+    background: #fff;
+    border-radius: 4px;
+    .search-item{
+    	position: relative;
+    	height: 56px;
+    	line-height: 56px;
+    	white-space: nowrap;
+    	border-bottom: 1px solid #eee;
+    	padding: 0 9px;
+		i.icon-clear{
+			position: absolute;
+			top: 0;
+			right: 8%;
+			width: 25px;
+			height: 56px;
+			background: url($imgURL_org +'/tmc/icon-clear.png') no-repeat center;
+		}
+    	span.main{
+            font-size: 20px;
+            color: #333;
+    	}
+    	span.sub{
+    		font-size: 14px;
+    		color: #999;
+			display: inline-block;
+			vertical-align: top;
+    	}
+    	&.search-date{
+    		height: 88px;
+    		padding: 9px;
+    		line-height: 35px;
+    		span.main{
+    			font-size: 18px;
+    			color: #000;
+    		}
+    		span.sub{
+    			font-size: 14px;
+    			color: #999;
+    		}
+    		.count{
+    			position: absolute;
+    			top: 50%;
+    			right: 30px;
+    			margin-top: -16px;
+    			font-size: 14px;
+    			color: #999;
+    		}
+    	}
+    }
+}
+
+.m-loading{
+    position: absolute;
+    top: 27%;
+    left: 42%;
+}
+.m-loading{
+	img{
+		width:	72px;
+	}
+}
+.next-loading{
+    font-size: 14px;
+    text-align: center;
+    padding: 5px;
+}
+/**/
+.hotel-list{
+	.loading>img,.no-result>img{
+		display: block;
+		margin: auto;
+		margin-top: 40%;
+	}
+	.no-result>span{
+		display: block;
+		width: 100%;
+		text-align: center;
+		font-size: 14px;
+		color: #666;
+		margin-top: 20px;
+	}
+}
+/** loading tip start */
+.m-tip{
+	display: none;
+	&.load-next,&.done{
+		display: block;
+		margin-bottom: 50px;
+		margin-top: 10px;
+	}
+	&.load-next{
+		height: 40px;
+	}
+	&.done span,&.load-next img{
+		display: block;
+	}
+	span{
+		display: none;
+		font-size: 12px;
+		color: #666;
+		width: 100%;
+		text-align: center;
+	}
+	img{
+		display: none;
+		margin: auto;
+		height:	100%;
+		max-height: 84px;
+	}
+}
+/** loading tip end */
+/** 品牌、商圈 **/
+.keyword-cover{
+	background: #eee;
+	height: 100%;
+	overflow:hidden;
+	.cover-con{
+		margin-top: 0;
+		padding-top: 40px;
+		padding-bottom: 50px;
+		height: 100%;
+	}	 
+	.nav-tabs{
+		width: 35%;
+		float: left;
+		height: 100%;
+		background: #eee;
+		& > li{
+			float: left;
+			width: 100%;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			text-align: center;
+			line-height: 50px;
+			color: #333;
+			font-size: 14px;
+			opacity: 1;
+			&.active{
+				background: #fff;
+			}
+		}
+		&.sub-tab{
+			width: 45%;
+			background: #fff;
+			border-right: 1px solid #ddd;
+			& > li{
+                width: 93%;
+                //margin-left: 7%;
+				color: #333;
+				border-bottom: 1px solid #ddd;
+				text-align: center;
+				display: table;
+				white-space: normal;
+				line-height: initial;
+				&.active{
+					border-color: $main-color;
+				}
+				span.sub-tab-panel{
+					min-height: 50px;
+					display: table-cell;
+					vertical-align: middle;
+					padding: 10px 0;
+				}
+			}
+		}
+	}
+	.tab-content{
+           width: 65%;
+           height: 100%;
+           float: left;
+           text-align: center;
+           .tab-panel {
+           	   height: 100%;
+           	   background-color:#fff;
+			   overflow:auto;
+			   padding-bottom:56px;
+
+           }
+           &.sub-tab-content{
+           	    width: 55%;
+			   background: #fff;
+           }
+           ul{
+			   padding-left: 4%;
+			   background: #fff;
+			   height: 100%;
+            	li{
+            		width: 96%;
+            		color: #333;
+            		font-size: 14px;
+            		border-bottom: 1px solid #ddd;
+            		text-align: left;
+            		//line-height: 50px;
+            		//overflow: hidden;
+            		//white-space: nowrap;
+            		//text-overflow: ellipsis;
+            		text-align: center;
+            		background: #fff;
+					min-height: 50px;
+					display: table;
+					white-space: normal;
+					line-height: initial;
+            		&.active{
+            			color: #d6b045;
+            			border-color: $main-color;
+            		}
+					span{
+						min-height: 50px;
+						display: table-cell;
+						vertical-align: middle;
+						padding: 10px 0;
+					}
+            	}
+           }
+	}
+	.opt-con{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		padding: 10px 0;
+		border-top: 1px solid #eee;
+		background: #fff;
+		z-index: 2;
+		.btn-confirm{
+            width: 90%;
+            margin: 0 5%;
+            border-radius: 4px;
+		}
+	}
+}
+.tmc-hotellist{
+	background: #fff;
+	.input-con .icon-clear{
+		display: none;
+	}
+	.tmc-header.tmc-header-search{
+		input[type=text]{
+			padding-left: 80px;
+		}
+		.input-con{
+			position: relative;
+			.date-con{
+				position: absolute;
+				top: 0;
+				left: 12px;
+				width: 50px;
+				height: 30px;
+				white-space: nowrap;
+				& > div{
+					width: 50px;
+					height: 15px;
+					line-height: 15px;
+					font-size: 12px;
+                    color: #999;
+					span{
+						color: $main-font-color;
+						margin-left:1px;
+					}
+				}
+			}
+		}
+	}
+	ul.fliter-group{
+		width: 100%;
+		margin-bottom: 10px;
+		li{
+			float: left;
+			margin: 10px 0 0 10px;
+			padding: 0 15px;
+			height: 26px;
+			line-height: 2;
+			font-size: 12px;
+			color: #666;
+			border-radius: 4px;
+			background: #f2f4f7;
+			&.active{
+				background: #fbf7ee;
+				border: 1px solid $main-color;
+				color: $main-font-color;
+			}
+		}
+	}	
+}
+.hotel-list .result-con{
+    text-align: center;
+	img{
+		margin-top: 40px;
+	}
+	p{
+		margin-top: 20px;
+		font-size: 14px;
+		color: #666;
+	}
+}
+.hotel-con{
+	width: 100%;
+	height: 100px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	overflow: hidden;
+	.hotel-pic{
+		float: left;
+		width: 98px;
+		height: 98px;
+		overflow: hidden;
+		position: relative;
+		img{
+			width: 98px;
+		}
+	}
+	.hotel-info{
+		position: relative;
+		height: 98px;
+		margin-left: 110px;
+		padding: 5px 10px 5px 0;
+		font-size: 12px;
+		color:#9b9b9b;
+		.name{
+			font-size: 14px;
+			color: #333;
+			width: 100%;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+		.comment{
+			line-height: 25px;
+			.score{
+				font-size: 14px;
+				color: #f46d6d;
+			}
+		}
+		.desc{
+			overflow: hidden;
+		    white-space: nowrap;
+		    text-overflow: ellipsis;
+		}
+		.address{
+			margin-top: 6px;
+			float: left;
+			width: 70%;
+			overflow: hidden;
+			span{
+				white-space: nowrap;
+				margin-left: 0;
+			}
+		}
+		.price-group{
+			margin-top: 6px;
+			float: right;
+		}
+	}
+}
+.tmc-footer.hotel-footer{
+	background: #000;
+	opacity: .69;
+	z-index: 4;
+	.footer-item{
+		&.active{
+           a{color: $main-font-color;}
+		}
+	}
+}
+/** 底部排序框 **/
+.layer-sort{
+	position: relative;
+	width: 100%;
+	padding: 0 4% 44px 4%;
+	.sort-item{
+		position: relative;
+		width: 100%;
+		border-bottom: 1px solid #ddd;
+		font-size: 14px;
+		color: #666;
+		text-align: center;
+		line-height: 50px;
+		white-space: nowrap;
+		.tag{
+			visibility: hidden;
+			position: absolute;
+			top: 50%;
+			right: 5%;
+		}
+		.icon-dui{
+			margin-top: -5px;
+			width: 15px;
+			height: 10px;
+			background: url($imgURL_org + '/tmc/dui.png') no-repeat;
+		}
+		&.active{
+			.tag{
+				visibility: visible;
+			}
+		}
+	}
+	.btn-confirm{
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 44px;
+		font-size: 16px;
+	}
+}
+/** 底部星级价格筛选框 **/
+.layer-price-star{
+	.fliter-con{
+		padding:15px 0 8px 0;
+		font-size: 12px;
+		p{
+			padding-left: 10px;
+			color: #999;
+		}
+		ul li{
+			float: left;
+			margin:5px 0 5px 9px;
+			background: #f2f4f7;
+			color: #333;
+			font-size: 14px;
+			text-align: center;
+			border-radius: 4px;
+			padding: 7px 0;
+			p{
+				padding-left: 0;
+				font-size: 12px;
+			}
+			&.active{
+				background: #fbf7ee;
+				color: $main-font-color;
+				border: 1px solid $main-color;
+			}
+		}
+		&.star-fliter{
+			ul li{
+				width: 64px;
+				height: 50px;
+				&:first-child{
+					line-height: 50px;
+					padding:0;
+				}
+			}
+		}
+		&.price-fliter{
+			ul li{
+                width: 112px;
+                height: 34px;
+                font-size: 12px;
+                color: #666;
+                padding: 9px 0;
+                &:first-child{
+					width: 64px;
+				}
+			}
+		}
+	}
+
+	.btn-confirm{
+		width: 100%;
+		height: 44px;
+		font-size: 16px;
+	}
+}
+
+
+/**suggest**/
+.autoinput-con{
+	height:100%;
+	&.ext-sug{
+		background-color:#fff;
+		.tmc-content{
+			display:none;
+		}
+		.tmc-suggest-main{
+			display:block;
+			height: 100%;
+			overflow: auto;
+		}
+	}
+	.tmc-content{
+		display:block;
+	}
+	.tmc-suggest-main{
+		font-size: 12px;
+		display:none;
+		li{
+			border-bottom: 1px solid #e3e3e3;
+		    height: 34px;
+		    line-height: 34px;
+		    span:nth-child(1){
+				float: left;
+			    max-width: 82%;
+			    overflow: hidden;
+			    white-space: nowrap;
+			    text-overflow: ellipsis;
+				color: #666;
+				em{
+					color:$main-font-color;
+					font-style: normal;
+				}
+		    }
+		    span:nth-child(2){
+			    float: right;
+			    max-width: 18%;
+				color: #999;
+				white-space: nowrap;
+		    }
+		}
+	}
+}

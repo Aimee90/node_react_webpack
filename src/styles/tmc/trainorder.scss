@@ -1,0 +1,484 @@
+@import "../global-m.scss";
+@import "../base/tmc-animation.scss";
+@import "../module/tmc-cover.scss";
+@import "../base/imgURL.scss";
+.price{
+	color: $highlight-color;
+	font-size: 14px;
+	.rmb{
+		font-size: 12px;
+	}
+}
+.bill{
+	color: $main-color;
+	margin-left:10px;
+}
+.m-bill{
+	.title{
+		height: 48px;
+		line-height: 48px;
+		font-size: 16px;
+		color: #333;
+		text-align: center;
+		border-bottom: 1px solid #ddd;
+	}
+	.bill-con{
+		padding: 10px 5%;
+		margin-bottom: 2px;
+	}
+	.bill-item{
+		height: 24px;
+		line-height: 24px;
+		.name{
+           float: left;
+		}
+        .cost{
+        	float: right;
+        }
+	}
+	.fill-con{
+		height: 48px;
+	}
+}
+.tip{
+	width: 100%;
+	padding: 2.5%;
+	font-size: 12px;
+	color: #666;
+	background: #fff;
+	.time{
+		color: #999;
+	}
+}
+.ticket-tip{
+	height: 35px;
+	line-height: 35px;
+	font-size: 12px;
+	color: #666;
+	padding: 0 2.5%;
+}
+.train-con{
+	background: $main-color-light;
+	width: 100%;
+	height: 100px;
+	padding: 10px 5%;
+	& > div{
+		float: left;
+		width: 33%;
+		color: #333;
+		font-size: 14px;
+		line-height: 25px;
+		.time{
+			font-size: 22px;
+			font-family: Arial;
+		}
+		.date{
+			font-family: Arial;
+			font-size: 12px;
+			span{
+				font-family: PingFangSC, "Microsoft Yahei";
+			}
+		}
+		.station{
+			width: 100%;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+	}
+	.train-info{
+		text-align: center;
+		padding: 10px 0;
+		.train-no{
+			font-size: 16px;
+		}
+		.duration{
+			font-size: 12px;
+		}
+		.start-end{
+			width: 100%;
+			height: 25px;
+			text-align: center;
+			span{
+				display: inline-block;
+				width: 65px;
+				height: 25px;
+				background:url($imgURL_org + '/tmc/jingting.png') no-repeat -6px 2px;
+			}
+		}
+	}
+	.arr-info{
+		text-align: right;
+	}
+}
+.ticket-con{
+	width: 100%;
+	height: 90px;
+	padding: 10px 5%;
+	background: #fff;
+	font-size: 12px;
+	color: #666;
+	border-top: 1px solid #e8e8e8;
+	line-height: 20px;
+	.pass-name{
+		max-width: 170px;
+		overflow:hidden;
+		white-space: nowrap;
+		font-size: 14px;
+		color: #333;
+		text-overflow: ellipsis;
+		span{
+			font-size: 12px;
+			color: #999;
+			margin-left: 10px;
+		}
+	}
+	.ticket-state.succ{
+		color: $main-color;
+	}
+	.fr{
+		text-align: right;
+	}
+	.opt{
+		margin-top: 5px;
+	}
+	.btn-endorse,
+	.btn-refund{
+		padding: 0 5px;
+		background: #fff;
+		width: 43px;
+		height: 20px;
+		line-height: 1;
+		font-size: 12px;
+		border-radius: 2px;
+		text-align: center;
+		white-space: nowrap;
+		margin-left: 2px;
+	}
+	.btn-endorse{
+		border: 1px solid $main-color;		
+		color: $main-color;		
+	}
+	.btn-refund{
+		border: 1px solid $highlight-color;
+		color: $highlight-color;	
+	}
+}
+.opt-con{
+    background: #fff;
+    width: 100%;
+    border-top: 1px solid #e8e8e8;
+    padding: 10px 5%;
+    button{
+    	width: 100%;
+    	border-radius: 4px;
+    	font-size: 14px;
+    }
+    &.book{
+    	background: transparent;
+    	padding-bottom: 0;
+    }
+    &.do-all{
+    	padding: 8px 0;
+    	div{
+    		float:left;
+    		vertical-align: middle;
+    		width: 50%;
+    		height: 28px;
+    		line-height: 28px;
+    		color: $highlight-color;
+    		text-align: center;
+    		font-size: 14px;
+    		&:last-child{
+    			border-left: 1px solid #e8e8e8;
+    		}
+    	}    	
+    }
+}
+
+.other-info{
+	margin-top: 10px;
+    .info-con{
+    	position: relative;
+    	background: #fff;
+    	width: 100%;
+    	height: 44px;
+    	line-height: 44px;
+    	border-bottom: 1px solid #e8e8e8;
+    	white-space: nowrap;
+    	padding: 0 2.5%;
+    	.fl{
+    		width: 25%;
+            overflow: hidden;
+    		font-size: 14px;
+    		color: #333;
+    	}
+    	.fr{
+    		width: 75%;
+    		overflow: hidden;
+    		text-overflow: ellipsis;
+    		font-size: 12px;
+    		color: #666;
+    		text-align: right;
+    		&.time{
+    			color: #999;
+    		}
+			.ins-s-tag{
+				display: inline-block;
+				width: 32px;
+				height: 20px;
+				line-height: 18px;
+				text-align: center;
+				font-size: 12px;
+				vertical-align: initial;
+				border-radius: 2px;
+				transform: scale(.8);
+				color:$highlight-color;
+				border: 1px solid $highlight-color;
+			}
+    	}
+    	.icon-next{
+    		position: absolute;
+    		width: 16px;
+    		height: 20px;
+    		background: url($imgURL_org + '/tmc/tmc-sprite-arrow.png') 0 -25px no-repeat;
+    		top: 10px;
+    		right: 0;
+    	}
+    	&.quest-con{
+    		.fl{
+    			width: 75%; 
+    			font-size: 12px;
+    		    color: #999;   			
+    		}
+    		.fr{
+    			width: 25%;
+    		}
+    	}
+		&.o-info{
+			white-space: normal;
+			height: auto;
+			margin-top: 10px;
+			.title{
+				line-height: 45px;
+				border-bottom: 1px solid #ddd;
+				font-size: 14px;
+				color: #333;
+			}
+			.content{
+				padding: 8px 0;
+				font-size: 12px;
+			}
+			.item{
+				display: table;
+				width: 100%;
+				.name,.value{
+					display: table-cell;
+					font-size: 12px;
+					line-height: 25px;
+				}
+				.name{
+					color: #999;
+					width: 20%;
+				}
+				.value{
+					color: #333;
+					width: 80%;
+				}
+			}
+		}
+		&.o-info:last-child{
+			margin-top: 10px;
+		}
+    }
+}
+
+.layer-refund{
+	background:#ffffff;
+	border-radius:4px;
+	width:275px;
+	height:160px;
+	text-align: center;
+	padding: 10px;
+	.title{
+       line-height: 20px;
+       font-size: 16px;
+       margin-bottom: 10px;
+	}
+	button{
+	   margin-top: 10px;
+	   width: 160px;
+	   height: 40px;
+	   border-radius: 4px;
+	}
+}
+.layui-m-layercont{
+	padding: 10px 8px;
+}
+.laryer-refund-confirm{
+	text-align: left;
+	padding: 0 10px;
+	.title{
+		text-align: center;
+		color: #333;
+		font-size: 16px;
+		line-height: 30px;
+	}
+	.sub-title{
+		font-size: 16px;
+	}
+	.fee-amount{
+		margin: 5px 0;
+		line-height: 20px;
+	}
+	.tip{
+		padding: 0;
+	}
+}
+
+.refund-cover{
+	background: #eee;
+	.cover-con{
+        padding-top: 2.5%;
+	}
+	.refund-con{
+		width: 95%;
+        margin: 0 2.5%;
+        padding: 0 2.5% 2.5% 2.5%;
+        background: #fff;       
+	}
+	.dep{
+		position: relative;
+		height: 40px;
+		line-height: 40px;
+		font-size: 14px;
+		color: #999;
+		.date-con{
+			margin-left: 25px;
+			font-size: 16px;
+			color: #333;
+			.week{
+				margin-left: 4px;
+			}
+		}
+		.icon-next{
+			position: absolute;
+			width: 16px;
+			height: 20px;
+			background: url($imgURL_org + '/tmc/tmc-sprite-arrow.png') 0 -25px no-repeat;
+			top: 10px;
+			right: 0;
+		}
+	}
+	.btn-refund{
+        width: 100%;
+        border-radius: 4px;
+        font-size: 16px;
+        margin-top: 10px;
+	}
+}
+.notice-cover{
+	.cover-con{
+		padding: 2.5%;
+		background: #fff;
+	}
+	.notice-item{
+		.title{
+           border-left: 4px solid $main-color;
+           padding-left: 8px; 
+           font-size: 14px;
+           height: 16px;
+           line-height: 16px;
+           margin: 8px 0;
+		}
+		.content{
+			font-size:12px;
+			color:#666;
+			line-height:20px;
+		}
+	}
+}
+.jinting-cover{
+	padding: 10px;
+	.cover-con{
+		.duration{
+			height: 40px;
+			line-height: 40px;
+			font-size: 14px;
+			color: #666;
+			text-align: center;
+		}
+		table{
+			width: 100%;
+			border-collapse:collapse;
+			tr{
+				width: 100%;
+			}
+			th,td{
+                width: 30%;
+				height: 40px;
+				line-height: 1;
+				font-size: 14px;
+				text-align: center;
+			}
+			tr{
+				th:first-child,
+				td:first-child{
+                    width: 10%;
+                    span{
+                    	display: inline-block;
+                    	vertical-align: middle;
+                    	background: $main-font-color;
+                    	height: 16px;
+                    	width: 16px;
+                    	border-radius: 8px;
+                    	-webkit-border-radius: 8px;
+                    	color: #fff;
+                    	line-height: 16px;
+                    	font-size: 12px;
+                    }
+				}
+			}
+			th{
+				font-size: #333;
+				font-weight: normal;
+				border-bottom: 1px solid #e8e8e8;
+			}
+			td{
+				color: #666;
+			}
+		}
+	}
+}
+
+
+.tmc-confirm-footer {
+	background: #fff;
+	border-top: 1px solid #ddd;
+	z-index: 1051;
+	&>.confirm-time{
+		float: left;
+		line-height: 50px;
+		padding: 0 10px;
+		font-size: 14px;
+		color: #333;
+		max-width: 320px;
+		&>.timer{
+			margin:0 5px;
+			color: $highlight-color;
+		}
+	}
+	&>button{
+		&.btn-next{
+			margin-left: 3%;
+			width: 30%;
+			background: #d6b864;
+			color: #fff;
+			font-size: 16px;
+			white-space: nowrap;
+			height: 100%;
+			position: absolute;
+			right: 0;
+		}
+	}
+}

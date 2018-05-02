@@ -1,0 +1,351 @@
+@import "../global-m.scss";
+@import "../module/tmc-cover.scss";
+@import "../module/select-con.scss";
+@import "../base/imgURL.scss";
+@import "../module/flight-detail-con.scss";
+@import "../module/flight/return-tip.scss";
+@import "../module/flight/ins-order.scss";
+@import "../base/tmc-animation.scss";
+.layui-m-layer{
+  z-index: 1052;
+}
+.radio-box {
+  float: right;
+  margin-top: 15px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  border:1px solid $main-color;
+  cursor: pointer;
+}
+
+.selected.radio-box {
+  border: none;
+  background: url($imgURL_org + '/tmc/flight/icon-radio2x.png') center no-repeat;
+  background-size: 100%;
+}
+.price{
+  color: $highlight-color;
+}
+.warning-txt{
+  color: $highlight-color;
+}
+
+.m-content{
+  margin-top: 10px;
+  background: #fff;
+  padding: 0 10px;
+  width: 100%;
+  & > .title{
+    line-height: 45px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    color: #333;
+  }
+  & > .ins-cover{
+    line-height: 45px;
+    font-size: 14px;
+    color: #333;
+    position: relative;
+    & > .icon-next{
+      position: absolute;
+      width: 16px;
+      height: 20px;
+      background: url(https://ssl.tuniucdn.com/img/20170607/jinrong/tmc/m/img/tmc/tmc-sprite-arrow.png) 0 -25px no-repeat;
+      top: 10px;
+      right: 0;
+    }
+  }
+  .info-item{
+      display: table;
+      width: 100%;
+      .name,
+      .value{
+        display: table-cell;
+        font-size: 12px;
+        line-height: 25px;
+      }
+      .name{
+        color: #999;
+        width: 20%;
+      }
+      .value{
+        color: #333;
+        width: 80%;
+      }
+  }
+}
+.ins-info,
+.contact-info,
+.pass-info ,
+.costcenter-info,
+.approve-info,
+.project-info,
+.cause-info{
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 12px;
+  &:last-child {
+    border: none;
+  }
+}
+.bill-cover{
+    .cover-con > .title{
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+      line-height: 50px;
+    }
+  .bill-con{
+      font-size: 14px;
+      color: #333;
+    padding: 10px 20px;
+    hr{
+      width: 95%;
+      margin: 0 auto;
+      margin-bottom: 15px;
+      height: 15px;
+      border: none;
+      border-bottom: 1px dashed #ddd;
+    }
+  }
+  .bill-item{
+      float: left;
+       width: 100%;
+    line-height: 25px;
+      & > div{
+        float: left;
+        width: 50%;
+      }
+      & > .cost{
+        text-align: right;
+      }
+  }
+  .close-con{
+    width: 40px;
+    height: 40px;
+    background: url($imgURL_org + '/tmc/close-circle2x.png') center no-repeat;
+    background-size: 100%;
+    margin: 20px auto;
+  }
+}
+.re-cover{
+  .cover-con{
+    background: #eee;
+    padding-bottom: 60px;
+    .tab-panel{
+      display: none;
+      &.active{
+        display: block;
+      }
+    }
+  }
+  .common-tip{
+    position: fixed;
+    left: 0;
+    background:#fef5d6;
+    width:100%;
+    line-height: 30px;
+    height:30px;
+    font-size: 12px;
+    color: #999;
+    padding: 0 10px;
+  }
+  .main-con{
+    width: 95%;
+    margin: 40px 2.5% 30px 2.5%;
+  }
+  .m-flights{
+    border: none;
+    background: transparent;
+    margin-bottom: 10px;
+    .flight-con{
+      border-radius: 4px 4px 0 0;
+    }
+  }
+  .pass-list{
+    width: 100%;
+    background: #fff;
+    padding: 0 10px;
+    & > li{
+      line-height: 50px;
+      height: 50px;
+      border-bottom: 1px solid #ddd;
+      font-size: 14px;
+      color: #333;
+      &:last-child{
+        border-bottom: none;
+      }
+    }
+    .name{
+      float: left;
+      width: 80%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+   .opt{
+     width: 100%;
+     height: 50px;
+     line-height: 50px;
+     & > button{
+       float: left;
+       width: 50%;
+       height: inherit;
+       font-size: 16px;
+     }
+     .btn-delete{
+       background: #fff;
+       color:#666;
+     }
+   }
+}
+.endorse-cover{
+  .cover-con{
+    background: #eee;
+  }
+  .input-item{
+    position: relative;
+    height: 55px;
+    line-height: 55px;
+    .icon-arrow{
+       position: absolute;
+      top: 50%;
+      right: 5px;
+      margin-top: -7.5px;
+       display: inline-block;
+       vertical-align: middle;
+      width: 26px;
+      height: 15px;
+      background: url($imgURL_org + '/tmc/tmc-sprite-arrow.png') 11px -29px no-repeat;
+      transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+    }
+  }
+  .input-item label,
+  .input-item input{
+    color: #000;
+    vertical-align: top;
+  }
+  .input-item label{
+    width: 36%;
+  }
+  .input-item input{
+    width: 54%;
+    margin: 12.5px 0;
+  }
+  .opt{
+    width: 100%;
+    margin-top: 30px;
+    button{
+      width: 90%;
+      margin: 0 5%;
+      font-size: 16px;
+      border-radius: 4px;
+    }
+  }
+}
+.layer-cabin{
+  .select-item{
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+  }
+}
+
+.retip-cover{
+  .nav-tabs{
+    width: 50%;
+    margin:  0 auto;
+    & > li{
+      float: left;
+      width: 50%;
+      font-size: 14px;
+      &.active{
+        font-size: 16px;
+      }
+    }
+  }
+  .tmc-header{
+      border-bottom: 1px dashed #f5e1ac;
+  }
+  .m-content.m-bill .info-item .value{
+      text-align: right;
+  }
+  .m-content.m-pass .info-item .value{
+    text-align: right;
+    color: #999;
+  }
+  .m-content.m-pass .info-item .name{
+    color: #666;
+  }
+}
+
+
+//Radio
+.radio-box {
+  border-radius: 10px;
+  border: 1px solid #d6b864;
+  margin-right: 10px;
+  float:left;
+  &.active{
+    border: none;
+    background: url(https://ssl.tuniucdn.com/img/20170607/jinrong/tmc/m/img/tmc/flight/icon-radio2x.png) center center no-repeat;
+    background-size: 100%;
+  }
+}
+
+//refundable ticket
+.return-flight{
+  .flight-info{
+    width: 80%;
+    float: left;
+    span{
+      text-align: left;
+      display: block;
+      &:nth-child(1){
+        font-size: 16px;
+        color: #d6b864;
+        letter-spacing: -0.39px;
+        line-height: 22px;
+      }
+      &:nth-child(2){
+        font-size: 12px;
+        color: #666666;
+        letter-spacing: 0;
+        line-height: 16px;
+      }
+    }
+  }
+}
+
+.tmc-confirm-footer {
+  background: #fff;
+  border-top: 1px solid #ddd;
+  z-index: 1051;
+  &>.confirm-time{
+    float: left;
+    line-height: 50px;
+    padding: 0 10px;
+    font-size: 14px;
+    color: #333;
+    max-width: 320px;
+    &>.timer{
+      margin:0 5px;
+      color: $highlight-color;
+    }
+  }
+  &>button{
+    &.btn-next{
+      margin-left: 3%;
+      width: 30%;
+      background: #d6b864;
+      color: #fff;
+      font-size: 16px;
+      white-space: nowrap;
+      height: 100%;
+      position: absolute;
+      right: 0;
+    }
+  }
+}

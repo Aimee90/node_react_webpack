@@ -1,0 +1,27 @@
+.input-con{
+	background: #fff;
+	padding: 0 5%;
+}
+.input-item{
+	height: 44px;
+	line-height: 44px;
+	border-bottom: 1px solid #e8e8e8;
+	&:last-child{
+		border: none;
+	}
+	label{
+		width: 20%;
+		display:inline-block;
+		font-size: 14px;
+		color: #666;
+		white-space: nowrap;
+	}
+	input{
+		width: 70%;
+		height:30px;
+		line-height: 30px;
+		margin: 6px 0 6px 5%;
+		color: #999;
+		font-size: 14px;
+	}
+}

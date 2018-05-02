@@ -1,0 +1,710 @@
+/**
+** 酒店详情
+** @author fanjiejing
+** @date 2017-4-14
+**/
+@import "../global-m.scss";
+@import "../base/tmc-animation.scss";
+@import "../module/tmc-cover.scss";
+@import "../base/imgURL.scss";
+@import "../module/tmc-select.scss";
+.price {
+    color: $highlight-color;
+}
+.tmc-hoteldetail{
+    margin-bottom: 0;
+}
+.icon-arrow-slide{
+    width: 26px;
+    height: 15px;
+    background: url($imgURL_org + '/tmc/tmc-sprite-arrow.png') no-repeat 11px -29px;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transition: .3s ease-in-out;
+}
+.extend-in .icon-arrow-slide{
+    background-position: 8px -29px;
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+}
+.icon-next{
+    width: 16px;
+    height: 20px;
+    background: url($imgURL_org + '/tmc/tmc-sprite-arrow.png') 0 -25px no-repeat;
+}
+[class^="icon-fac"]{
+    width: 10px;
+}
+.m-img{
+    width: 100%;
+    height: 150px;
+    .img-con{
+        position: relative;
+        width: inherit;
+        height: inherit;
+        overflow: hidden;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        .desc{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            background: rgba(0,0,0,0.70);
+            color: #fff;
+            font-size: 14px;
+        }
+        .hotel-name{
+            float: left;
+            width: 80%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-indent: 10px;
+        }
+        .more{
+            float: right;
+            width: 40px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            background: #333;
+            font-size: 12px;
+            border-radius: 6px;
+            margin: 5px 10px 5px 0;
+        }
+    }
+}
+.m-info{
+    width: 100%;
+    height:60px;
+    background: #fff;
+    & > div{
+        float: left;
+        height: inherit;
+    }
+    .comment-con{
+        width: 32%;
+        text-align: center;
+        line-height: 60px;
+        white-space: nowrap;
+        color:#d6b045;
+        font-size: 16px;
+        span{
+            font-size:24px;
+        }
+    }
+    .address-con{
+        width: 68%;
+        border-left: 1px solid #eee;
+        padding: 20px 5%;
+        label{
+            float: left;
+            width: 20%;
+            font-size: 14px;
+            color: #666;
+            white-space: nowrap;
+        }
+        p{
+            float: left;
+            width: 70%;
+            font-size: 14px;
+            color: #666;
+            overflow: hidden;
+            height: 20px;
+            white-space: nowrap;
+            span{
+                display: inline-block;
+            }
+        }
+    }
+}
+.m-intro{
+    width: 100%;
+    height: 56px;
+    background: #fff;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+    .fac-con{
+        float: left;
+        width: 80%;
+        height: 32px;
+        margin: 12px 0;
+        li{
+            float: left;
+            width: 20%;
+            text-center: center;
+            font-size: 12px;
+            color: #666;
+            p{
+                width: 100%;
+                text-align: center;
+                overflow: hidden;
+			    text-overflow: ellipsis;
+			    white-space: nowrap;
+            }
+            .icon-dui{
+                background: url($imgURL_org + '/tmc/dui.png') 50% 0 no-repeat;
+                width: 100%;
+                height: 10px;
+            }
+        }
+    }
+    .more{
+        position: relative;
+        float: right;
+        line-height: 56px;
+        font-size: 14px;
+        color: $main-font-color;
+        width: 50px;
+        .icon-next{
+            width: 16px;
+            height: 20px;
+            background: url($imgURL_org + '/tmc/tmc-sprite-arrow.png') 2px -28px no-repeat;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+    }
+    .comment-con{}
+}
+.m-rooms{
+    margin-top: 10px;
+    background: #fff;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+    font-size: 14px;
+    .search-con{
+        height: 40px;
+        line-height: 40px;
+        padding: 0 10px;
+        font-size: 12px;
+        & > div{
+            float: left;
+            width: 50%;
+        }
+        & > .date{
+            color: #333;
+            span.count{
+                color: #999;
+                margin-left: 10px;
+            }
+        }
+        & > .fliter{
+            color: #999;
+            text-align: right;
+            .common{
+                width: 70%;
+                overflow: hidden;
+                white-space: nowrap;
+                .overflow-slide{
+                    overflow: auto;
+                    span{
+                        display: inline-block;
+                        text-align: center;
+                        font-size: 12px;
+                        height: 24px;
+                        line-height: 24px;
+                        padding: 0 5px;
+                        background: #f2f4f7;
+                        color: #666;
+                        border-radius: 2px;
+                        &.active{
+                            background: $main-color-light;
+                            border: 1px solid $main-font-color;
+                            color: $main-font-color;
+                            line-height: 22px;
+
+                        }
+                    }
+                }
+            }
+            .other{
+                width: 30%;
+                color: #d6b045;
+                font-size: 14px;
+                position: relative;
+                padding-right: 5px;
+                &.active span{
+                    position: absolute;
+                    display: inline-block;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 3px;
+                    background: $highlight-color;
+                    top: 14px;
+                    right: -4px;
+                }
+            }
+            & > div{
+                float: left;
+            }
+        }
+    }
+    .room-con{
+        position: relative;
+        width: 100%;
+        border-top: 1px solid #eaeaea;
+        overflow: hidden;
+        .room-info{
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            overflow: hidden;
+            & > div{
+                float: left;
+            }
+            & > .pic{
+                width: 80px;
+                height: 80px;
+                img{
+                    width: 100%;
+                }
+            }
+            & > .desc{
+                margin-left: 10px;
+                height: 80px;
+                overflow: hidden;
+            }
+            .name,
+            .detail{
+                width: 190px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .name{
+                height: 25px;
+                line-height: 1.5;
+                margin-top: 15px;
+            }
+            .detail{
+                height: 15px;
+                font-size: 12px;
+                color: #999;
+            }
+            .other{
+                margin-top: 5px;
+                .amount{
+                    position: absolute;
+                    top: 45px;
+                    right: 35px;
+                    font-size: 12px;
+                    color: #999;
+                    .price{
+                        color: #fb6a64;
+                    }
+                }
+                .tag{
+                    display: inline-block;
+                    vertical-align: top;
+                    font-size: 12px;
+                    color: #fff;
+                    padding: 2px 5px;
+                    background: #fb6a64;
+                    border-radius: 4px;
+                }
+            }
+        }
+        .opt-extend{
+            position: absolute;
+            top: 10px;
+            right: 6px;
+            width: 26px;
+            height: 80px;
+        }
+        .icon-arrow-slide{
+            position: absolute;
+            top: 35px;
+        }
+        @keyframes slideDown {
+            from {
+                height: 0;
+                opacity: 0;
+                animation-timing-function: ease-in-out;
+            }
+            50% {
+                height: 80px;
+                opacity: 1;
+                animation-timing-function: ease-in-out;
+            }
+            to {
+                height: auto;
+                opacity: 1;
+                animation-timing-function: ease-in-out;
+            }
+        }
+        .rateplan-list{
+            height: 0;
+            .opt-showmore{
+                text-align: center;
+                line-height: 30px;
+                font-size: 12px;
+                color: #999;
+                border-top: 1px solid #eaeaea;
+                background: #fefaf1;
+            }
+        }
+        &.extend-in{
+            .rateplan-list{
+                animation-name: slideDown;
+                animation-duration: .15s;
+                animation-timing-function: ease-in-out;
+                height: auto;
+            }
+        }
+    }
+    .rateplan-con{
+        position: relative;
+        background:#fefaf1;
+        width:100%;
+        height:85px;
+        border-top: 1px solid #eaeaea;
+        padding: 10px;
+        .desc{
+            width: 190px;
+            & > div{
+                width: inherit;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .other{
+                margin-top: 2px;
+                font-size: 12px;
+                color: #999;
+                span{
+                    margin-right: 10px;
+                }
+            }
+            .tag-con{
+                margin-top: 2px;
+                span.tag{
+                    margin-right: 10px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    font-size: 12px;
+                    color: #fb6a64;
+                    padding: 2px 5px;
+                    border-radius: 4px;
+                    border: 1px solid #fb6a64;
+                }
+            }
+        }
+        .price{
+            position: absolute;
+            font-size: 12px;
+            color: #f46d6d;
+            top: 50%;
+            right: 85px;
+            margin-top: -10px;
+            line-height: 20px;
+        }
+        .btn-book{
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            margin-top: -15px;
+            width: 50px;
+            height: 30px;
+            border-radius: 4px;
+            padding: 0;
+            line-height: 30px;
+            text-align: center;
+        }
+    }
+}
+.picviewer-cover{
+    ul.fliter{
+        border-bottom: 1px solid #eaeaea;
+        li{
+            float: left;
+            width: 15%;
+            text-align: center;
+            padding: 14px;
+            &:last-child{
+                width: 25%;
+            }
+        }
+        p{
+            width: 100%;
+            font-size: 14px;
+            color: #666;
+            line-height: 20px;
+        }
+        li.active p{
+            color: $main-font-color;
+        }
+    }
+    .pic-list{
+        padding: 15px 0 5px 2%;
+        background: #fff;
+        .img-con{
+            width: 31%;
+            margin-right: 2%;
+            margin-bottom: 10px;
+            height: 80px;
+            overflow: hidden;
+            float: left;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .pic-swipe{
+        position: fixed;
+        z-index: 4;
+        top: 0;
+        left: 0;
+        background: #000;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding-top: 40px;
+        .btn-book{
+            border-radius: 4px;
+            width: 80%;
+        }
+        .swipe{
+            margin-top: 10%;
+            width: 100%;
+        }
+        .img-con{
+            width: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .swipe-info{
+            margin-top: 10%;
+            font-size: 20px;
+            text-align: center;
+            color: #fff;
+        }
+        .btn-book{
+            font-size: 17px;
+            margin-top: 20%;
+        }
+    }
+}
+.hotelinfo-cover{
+    background: #eee;
+    .info-content{
+        background: #fff;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #eaeaea;
+        font-size: 14px;
+        padding: 0 10px;
+        .close-con{
+            display: none;
+        }
+        &.extend-in{
+            .close-con{
+                display: block;
+            }
+        }
+        .title{
+            width: 100%;
+            border-bottom: 1px solid #eaeaea;
+            height: 50px;
+            line-height: 50px;
+            color: #333;
+        }
+        .detail{
+            width: 100%;
+            line-height: 20px;
+            color: #666;
+            padding: 10px 0;
+        }
+
+        .more{
+            display: inline-block;
+            width: 50px;
+        }
+        &.fac{
+            ul.item-list li{
+                float: left;
+                width: 33%;
+                text-align: left;
+                margin: 8px 0;
+                overflow: hidden;
+			    text-overflow: ellipsis;
+			    white-space: nowrap;
+                i{
+                    background: url($imgURL_org + '/tmc/dui.png') center no-repeat;
+                    width: 25px;
+                    height: 20px;
+                    margin-right: 5px;
+                }
+            }
+
+        }
+        &.intro{
+            .detail p{
+                width: 100%;
+                height: 80px;
+                overflow: hidden;
+            }
+        }
+        &.extend-in.intro .detail p{
+            height: auto;
+        }
+    }
+}
+.layer-fliter{
+    .fliter-con {
+        padding: 15px 0 8px;
+        font-size: 12px;
+        p {
+            padding-left: 10px;
+            color: #999;
+        }
+        ul li {
+            float: left;
+            margin: 5px 0 5px 9px;
+            background: #f2f4f7;
+            color: #333;
+            font-size: 14px;
+            text-align: center;
+            border-radius: 4px;
+            padding: 7px 25px;
+            &.active{
+                background: #fefaf1;
+                border: 1px solid #d6b045;
+                color: #d6b045;
+                padding: 6px 24px;
+            }
+        }
+    }
+    .btn-confirm{
+        width: 100%;
+        height: 44px;
+        font-size: 16px;
+    }
+}
+.layer-mid{
+    & > .title{
+        background:#f2f4f7;
+        width: 100%;
+        line-height: 44px;
+        padding: 0 10px;
+        font-size: 14px;
+        color: #333;
+        border-radius: 4px 4px 0 0;
+   }
+}
+.room-detail-cover{
+    background: #eee;
+    .cover-con{
+        padding-bottom: 60px;
+    }
+    .img-con{
+        width: 100%;
+        height: 170px;
+        text-align: center;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .detail-con{
+        padding: 5px 10px;
+        background: #fff;
+        font-size: 12px;
+        color: #333;
+    }
+    .detail-con .item{
+        float: left;
+        width: 50%;
+        line-height: 22px;
+    }
+    .fac-con{
+        margin-top: 10px;
+        background: #fff;
+    }
+    .m-fac{
+        padding: 10px;
+        border-top: 1px solid #eee;
+        & > div{
+            float: left;
+        }
+        & > .title{
+            width: 25%;
+            font-size: 14px;
+            color: #333;
+        }
+        & > .content{
+            width: 75%;
+            font-size: 12px;
+            color: #666;
+        }
+    }
+    .opt-footer{
+        background: #fff;
+        .bill{
+            width: 50%;
+            line-height: 50px;
+            padding-left: 15px;
+            font-size: 16px;
+            i{
+                font-size: 12px;
+            }
+        }
+        .btn-book{
+            height: 50px;
+            font-size: 16px;
+            width: 50%;
+            line-height: 1;
+        }
+    }
+}
+.layer-rateplan-detail{
+    .desc{
+        padding: 0 10px;
+        .title{
+            font-size:14px;
+            color:#d6b045;
+            line-height: 30px;
+        }
+        .item{
+            font-size: 12px;
+            line-height: 20px;
+            .fl{
+                width: 20%;
+                &.desc{
+                    width: 80%;
+                }
+            }
+        }
+    }
+    .opt{
+        height: 40px;
+        margin-top: 15px;
+        .price{
+            padding: 0 10px;
+            line-height: 40px;
+            float: left;
+            color: #fb6a64;
+            font-size: 16px;
+            width: 75%;
+            border-top: 1px solid #eaeaea;
+            i{
+                font-size: 12px;
+            }
+        }
+        button{
+            width: 25%;
+            float: right;
+            height: 41px;
+            font-size: 14px;
+        }
+    }
+}

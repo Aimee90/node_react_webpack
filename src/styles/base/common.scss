@@ -1,0 +1,56 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  font-size: 16px;
+  font-family: 'PingFangSC-Regular','Microsoft Yahei', Tahoma, Helvetica, Arial, sans-serif;
+}
+.hide{
+  display: none!important;
+}
+.v-hide{
+  visibility: hidden!important;
+}
+.inline{
+  display: inline-block;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+.main-container{
+  background-color: $default-bg;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x:hidden;
+}
+/** 清除边框 **/
+.bclr-lf{
+  border-left: none!important;
+}
+
+.bclr-rt{
+  border-right: none!important;
+}
+
+.bclr-top{
+  border-top: none!important;
+}
+
+.bclr-bottom{
+  border-bottom: none!important;
+}

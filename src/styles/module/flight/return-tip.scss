@@ -1,0 +1,49 @@
+.refundtip-cover{
+  .cover-con{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+  }
+  .tip{
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 5px;
+    &:first-child{
+      margin-top: 20px;
+    }
+    span{
+      float: left;
+      text-align: center;
+      background: #d6b864;
+      border-radius: 2px;
+      width: 55px;
+      height: 20px;
+      color: #fff;
+      margin-right: 10px;
+      margin-bottom: 15px;
+    }
+  }
+  p.title{
+    color: #333;
+    font-weight: bold;
+    line-height: 30px;
+  }
+  table{
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+  }
+  table tr>td{
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    padding: 10px;
+    &:first-child{
+      width: 35%;
+    }
+    &:last-child{
+      width: 65%;
+    }
+  }
+}

@@ -1,0 +1,269 @@
+.m-flights{
+  border-top: 1px dashed #f5e1ac;
+  background: #d6b864;
+  width: 100%;
+  .flight-con{
+    width: 100%;
+    overflow: hidden;
+    color: #fff;
+    background: $main-color;
+    margin: 0;
+    padding: 12px 5%;
+    z-index: 3;
+    font-size: 12px;
+    line-height: 20px;
+    & > .trip{
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+      span.tag{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        line-height: 18px;
+        text-align: center;
+        font-size: 12px;
+        vertical-align: initial;
+        margin-right: 14px;
+        border-radius: 2px;
+        transform: scale(.8);
+      }
+      &.arr-trip span.tag{
+        color: #fff;
+        border: 1px solid #fff;
+      }
+      &.dep-trip span.tag{
+        background: #fff;
+        color: $main-color;
+        border: 1px solid #fff;
+      }
+    }
+    &:last-child{
+      border-bottom: none;
+    }
+    & > div{
+      float: left;
+    }
+    & > .duration{
+      width: 33%;
+      position: relative;
+      height: 45px;
+      text-align: center;
+      background: url($imgURL_org + '/tmc/flight/line2x.png') center no-repeat;
+      background-size: 60%;
+      span.jt-txt{
+        position: absolute;
+        top: 25px;
+        left: 0;
+        display: inline-block;
+        width: 100%;
+        vertical-align: top;
+      }
+      span.jingting{
+        display: inline-block;
+        vertical-align: middle;
+        height: 20px;
+        padding: 0 5px;
+        line-height: 18px;
+        background: #fff;
+        border-radius: 2px;
+        border: 1px solid $main-color;
+        color: $main-color;
+        transform: scale(.85);
+      }
+    }
+    & > .dep,
+    & > .arr,
+    & > .price{
+      width: 33%;
+      text-align: right;
+      font-size:18px;
+      color:$highlight-color;
+      i{
+        font-size: 12px;
+      }
+      span{
+        font-size: 12px;
+        color: #999;
+        margin-left: 4px;
+      }
+    }
+    .time{
+      position: relative;
+      span.over-day{
+        font-size: 12px;
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        display: inline-block;
+        width: 36px;
+        color: #666;
+        text-align: left;
+        transform: scale(.85);
+      }
+      color: #fff;
+      line-height: 25px;
+      font-size: 22px;
+      font-family: Arial;
+      span.over-day{
+        color: #fff;
+      }
+    }
+    & > .detail{
+      width: 100%;
+      text-align: center;
+      color:#efe1ba;
+      line-height: 25px;
+      span{
+        margin:2.5px 5px;
+        display: inline-block;
+        vertical-align: middle;
+        height: 15px;
+        line-height: 15px;
+        border-left: 1px solid #efe1ba;
+        padding-left: 5px;
+        img{
+          vertical-align: top;
+          margin-right: 5px;
+        }
+        i.share{
+          margin-left: 5px;
+          color: $main-color;
+        }
+        &:first-child{
+          border: none;
+        }
+        &.fr{
+          display: inline-block;
+          vertical-align: top;
+          height: 20px;
+          padding: 0 4px;
+          border: 1px solid $highlight-color;
+          color: $highlight-color;
+          line-height: 18px;
+        }
+      }
+      img{
+        border: none;
+        vertical-align: middle;
+        width: 16px;
+        height: 16px;
+      }
+    }
+    .airport{
+      font-size: 14px;
+      line-height: 20px;
+      color: #fff;
+    }
+    & > .arr{
+      text-align: right;
+    }
+    & > .dep{
+      text-align: left;
+    }
+    & > .draw-time{
+      width: 100%;
+      i{
+        height: 16px;
+        width: 16px;
+        margin-right: 5px;
+        vertical-align: middle;
+      }
+    }
+    & > .share-flight{
+      width: 100%;
+      padding-top: 5px;
+      img{
+        vertical-align: top;
+        margin-right: 5px;
+        width: 16px;
+        height: 16px;
+        border: none;
+      }
+    }
+  }
+  .flight-con + hr{
+    width: 90%;
+    margin: 0 5%;
+    height: 1px;
+    border: none;
+    background: #e4cc87;
+  }
+  .flight-detail{
+    width: 100%;
+    background: #fff;
+    padding: 10px 15px;
+    font-size: 12px;
+    color: #666;
+    //border-bottom: 1px solid #eee;
+    .order-item{
+      float: left;
+      width: 100%;
+      line-height: 25px;
+      overflow: hidden;
+      color: #999;
+      span{
+        margin-left: 15px;
+        color: #333;
+      }
+      span.price{
+        color: $highlight-color;
+      }
+      a{
+        margin-left: 10px;
+        color: $main-color;
+      }
+    }
+    .other-tip{
+      padding-top: 5px;
+      clear: both;
+      width: 100%;
+      color: $main-font-color;
+      line-height:12px;
+      span{
+        float: left;
+      }
+      span.refund-tip{
+        border-left: 1px solid $main-font-color;
+        margin-left: 10px;
+        text-indent: 10px;
+      }
+    }
+  }
+  .opt{
+    padding: 8px 0;
+    line-height: 28px;
+    height: 44px;
+    background: #fff;
+    font-size: 14px;
+    border-top: 1px solid #eee;
+    & > a{
+      float: left;
+      height: 100%;
+      width: 50%;
+      text-align: center;
+      &.opt-1{
+        color: $main-color;
+      }
+      &.opt-2{
+        color: $highlight-color;
+        border-left: 1px solid #ddd;
+      }
+    }
+  }
+  .cancel-opt{
+    background-color: #fff;
+    padding: 10px 5%;
+    a.btn{
+      height: 40px;
+      line-height: 40px;
+      display: block;
+      margin: auto;
+      text-align: center;
+      color: #fff;
+      background-color: #d6b864;
+      font-size: 14px;
+      border-radius: 4px;
+    }
+  }
+}

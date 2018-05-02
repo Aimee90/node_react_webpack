@@ -1,0 +1,65 @@
+@import "../global-m.scss";
+@import "../base/imgURL.scss";
+body{
+	background: #eee;
+}
+.tmc-editpsw.tmc-main{
+	padding-top: 1px;
+}
+.tmc-header{
+	background: $main-color;
+	color: #fff;
+	.icon-back{
+		width: 20px;
+		background: url($imgURL_org + '/tmc/tmc-sprite-arrow.png') 0 10px no-repeat
+	}
+}
+
+.tmc-editpsw{
+	& > div{
+        margin-top:10px;       
+        width: 100%;
+        min-height: 43px;
+        .psss-input{
+                width: 100% !important;
+        }
+        .m-edit{
+        	width: inherit;
+        	background: #fff;
+        	padding: 0 20px;
+        	.input-con{
+        		border-bottom: 1px solid #e8e8e8;
+        		height: 46px;
+        		padding: 8px 0;
+        		input{
+                    width: 60%;
+        			height: 34px;
+        			line-height: 34px;
+        			padding: 5px;
+        			color: #999;
+        			font-size: 14px;
+        		}
+        		.btn-event{
+        			padding: 0 10px;
+        			border-radius: 4px;
+        			height: 30px;
+					float: right;
+        		}
+        		&:last-child{
+        			border-bottom: none;
+        		}
+        	}  
+        }
+        .m-opt{
+        	margin-top: 25px;
+        	text-align: center;
+        	.btn-next{
+        		border-radius: 4px;
+        		width: 86%;
+        		height: 40px;
+        		line-height:1;
+        		font-size: 16px;
+        	}
+        }  
+	}
+}

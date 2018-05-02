@@ -1,0 +1,39 @@
+.nav-tabs{
+    li{
+    	float: left;
+    	vertical-align: middle;
+    	width: 50%;
+    	font-size: 14px;
+    	opacity: .5;
+    	&.active{
+    		font-size: 16px;
+    		opacity: 1;
+    	}
+    }
+}
+.tab-panel{
+	display:none;
+	.img{
+		text-align: center;
+		margin-top: 25%;
+		span{
+			display: block;
+			color: #7a7e83;
+			font-size: 14px;
+			padding: 10px;
+		}
+	}
+}
+.tab-panel.active{
+    display:block;
+}
+.content-footer{
+	.img{
+		text-align: center;
+		color: #7a7e83;
+		font-size: 14px;
+		img{
+			width: 30px;
+		}
+	}
+}

@@ -1,0 +1,144 @@
+i{
+	display: inline-block;
+	vertical-align: top;
+}
+@mixin setIcon($src,$width,$height,$X,$Y) {
+    width: $width;
+    height: $height;
+    background: url($src) no-repeat $X $Y;
+}
+
+@mixin setIcon2x($src,$width,$height,$X,$Y) {
+	width: $width;
+	height: $height;
+	background: url($src) no-repeat;
+	background-size: 100%;
+}
+
+.icon-back{
+    @include setIcon($sprite01,40px,40px,-5px,-18px);
+}
+
+.icon-pos{
+	@include setIcon($sprite01,14px,20px,-2px,-462px);
+}
+
+.icon-admin{
+	@include setIcon($sprite01,26px,26px,0,-58px);
+}
+
+.icon-password{
+	@include setIcon($sprite01,26px,26px,0,-86px);
+}
+
+.icon-next{
+	@include setIcon($sprite01,16px,20px,2px,6px);
+}
+
+.icon-order{
+	@include setIcon($sprite,16px,20px,-25px,-65px);
+}
+
+.icon-psw{
+	@include setIcon($sprite,16px,20px,-65px,-65px);
+}
+
+.icon-chat{
+	@include setIcon($sprite,18px,20px,-106px,-65px);
+}
+
+.icon-policy{
+    @include setIcon($sprite,18px,20px,-149px,-65px);
+}
+
+.icon-intro{
+    @include setIcon($sprite,18px,20px,-191px,-65px);
+}
+
+.icon-share{
+    @include setIcon($sprite,18px,20px,-278px,-65px);
+}
+
+.icon-home{
+    @include setIcon($sprite02,20px,20px,-2px,-6px);    
+}
+
+.icon-approve{
+    @include setIcon($sprite02,20px,20px,-2px,-36px);
+}
+
+.icon-schedule{
+    @include setIcon($sprite02,20px,20px,-2px,-100px);
+}
+
+.icon-admin2{
+    @include setIcon($sprite02,20px,20px,-3px,-67px);
+}
+
+.active {
+	.icon-home{
+		@include setIcon($sprite02,20px,20px,-31px,-6px);    
+	}
+
+	.icon-approve{
+		@include setIcon($sprite02,20px,20px,-31px,-36px);
+	}
+
+	.icon-schedule{
+		@include setIcon($sprite02,20px,20px,-31px,-100px);
+	}
+
+	.icon-admin2{
+		@include setIcon($sprite02,20px,20px,-31px,-67px);
+	}
+}
+
+.icon-exchenge{
+	@include setIcon($icons03,40px,40px,-94px,-8px);
+}
+
+.icon-stationline{
+	@include setIcon($sprite03,20px,20px,0,-350px);
+}
+
+.icon-dep{
+    @include setIcon2x($imgURL_org + '/tmc/tabs/dep-off2x.png',20px,20px,0,0);
+}
+
+.icon-arr{
+    @include setIcon2x($imgURL_org + '/tmc/tabs/arr-off2x.png',20px,20px,0,0);
+}
+
+.icon-waste{
+    @include setIcon2x($imgURL_org + '/tmc/tabs/waste-off2x.png',20px,20px,0,0);
+}
+
+.icon-fliter{
+    @include setIcon2x($imgURL_org + '/tmc/tabs/fliter-off2x.png',20px,20px,0,0);
+}
+
+.icon-price{
+	@include setIcon2x($imgURL_org + '/tmc/tabs/star-off2x.png',20px,20px,0,0);
+}
+
+.active {
+	.icon-dep{
+		@include setIcon2x($imgURL_org + '/tmc/tabs/dep-on2x.png',20px,20px,0,0);
+	}
+
+	.icon-arr{
+		@include setIcon2x($imgURL_org + '/tmc/tabs/arr-on2x.png',20px,20px,0,0);
+	}
+
+	.icon-waste{
+		@include setIcon2x($imgURL_org + '/tmc/tabs/waste-on2x.png',20px,20px,0,0);
+	}
+
+	.icon-fliter{
+		@include setIcon2x($imgURL_org + '/tmc/tabs/fliter-on2x.png',20px,20px,0,0);
+	}
+
+	.icon-price{
+		@include setIcon2x($imgURL_org + '/tmc/tabs/star-on2x.png',20px,20px,0,0);
+	}
+}

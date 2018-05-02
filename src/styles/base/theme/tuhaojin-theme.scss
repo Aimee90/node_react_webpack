@@ -1,0 +1,24 @@
+@import "../imgURL.scss";
+$main-color: #d6b864;
+$main-color-light: #fefaf1;
+$highlight-color: #f46d6d;
+$main-font-color: #d6b045;
+$tip-bg: #fef5d6;
+$light-border-color: #f5e1ac;
+
+$default-bg: #fff;
+
+$header-bg: $main-color;
+$main-bg: #eee;
+$border-bg: #eaeaea;
+
+$sprite: $imgURL_org + '/tmc/tmc-sprites.png';
+$sprite01: $imgURL_org + '/tmc/tmc-sprite01.png';
+$sprite02: $imgURL_org + '/tmc/tmc-sprite02.png';
+$sprite03: $imgURL_org + '/tmc/tmc-sprite03.png';
+$icons03: $imgURL_org + '/tmc/icons-3.png';
+$icons01: $imgURL_org + '/tmc/icons-1.png';
+$icons02: $imgURL_org + '/tmc/icons-2.png';
+$icon_add: $imgURL_org + '/tmc/icons-add.png';
+$foot_tabs: $imgURL_org + '/tmc/footer-tabs.png';
+$jingting: $imgURL_org + '/tmc/jingting.png';

@@ -1,0 +1,199 @@
+@import "../global-m.scss";
+@import "../base/imgURL.scss";
+@import "../module/footer-icons.scss";
+i{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@mixin setIcon2x($src,$width,$height,$X,$Y) {
+  width: $width;
+  height: $height;
+  background: url($src) no-repeat;
+  background-size: 100%;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+body{
+  background: url($imgURL_org + '/tmc/welcome-bg.png') 0 0 no-repeat;
+  background-color: #fff;
+  background-size: contain;
+}
+.main-container{
+  background: transparent;
+  padding-bottom: 60px;
+}
+.m-schedule{
+  width: 100%;
+  padding: 0 1%;
+  p{
+    line-height: 45px;
+    font-size: 14px;
+    color: #000;
+    span{
+      display: inline-block;
+      margin-right: 10px;
+      margin-left: 5px;
+      vertical-align: middle;
+      border:2px solid #868686;
+      width: 10px;
+      height:10px;
+      border-radius:100%;
+    }
+  }
+}
+.schedule-list{}
+.schedule-con{
+  margin-bottom: 10px;
+  width: 100%;
+  background:#fff;
+  border-radius:4px;
+  box-shadow:1px 1px 7px 0 rgba(196,196,196,0.50);
+  .head{
+    color:#fff;
+    width: 100%;
+    line-height: 40px;
+    border-radius: 4px 4px 0 0;
+    & > .fl{
+      width: 33%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    & > .type{
+      font-size: 12px;
+      padding-left: 10px;
+      i{
+        margin-right: 5px;
+        margin-bottom: 3px;
+      }
+    }
+    & > .title{
+      text-align: center;
+      font-size: 16px;
+    }
+    & > .id{
+      text-align: right;
+      padding-right: 5px;
+      font-size: 12px;
+      font-family:ArialMT;
+    }
+  }
+  .content{
+    padding: 12px 15px;
+    border-radius: 0 0 4px 4px;
+    font-size: 14px;
+    color: #333;
+  }
+  .journey{
+    & > .fl{
+      width: 33%;
+    }
+    .arr,
+    .dep{
+      text-align: center;
+    }
+    .station{
+      font-size: 14px;
+      color: #333;
+    }
+    .time{
+      font-size: 20px;
+      color: #2c2c2c;
+    }
+    .d-a{
+      text-align: center;
+      .line{
+        width: 65px;
+        height: 10px;
+        margin: 0 auto;
+        background: url($imgURL_org + '/tmc/trainline.png') no-repeat 0 -42px;
+      }
+    }
+    .duration,
+    .stopinfo{
+      font-size: 12px;
+      color: #999;
+    }
+  }
+  .detail{
+    margin-top: 15px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    font-size: 12px;
+    color: #666;
+    line-height: 20px;
+    & > .item{
+      span{
+        display: inline-block;
+        vertical-align: middle;
+        width: 4px;
+        height: 4px;
+        border-radius: 100%;
+        margin-bottom: 2px;
+        margin-right: 15px;
+      }
+      & span{
+        border:1px solid #2dbb55;
+      }
+      &:first-child span{
+        border:1px solid #ff5d25;
+      }
+    }
+  }
+  &.flight{
+    .content{
+      border: 1px solid #5db5fd;
+      border-top: none;
+    }
+    .head{
+      background-image:linear-gradient(157deg, #41e1f2 0%, #5db5fd 50%);
+      & > .type i{
+         @include setIcon2x($imgURL_20170614 + '/tmc/schedule/icon-flight2x.png',22px,18px,center,center)
+      }
+    }
+  }
+  &.train{
+    .content{
+      border: 1px solid $highlight-color;
+      border-top: none;
+    }
+    .head{
+      background-image:linear-gradient(155deg, #fd9062  0%, #fa5c5c 50%);
+      & > .type i{
+        @include setIcon2x($imgURL_20170614 + '/tmc/schedule/icon-train2x.png',23px,15px,center,center)
+      }
+    }
+  }
+  &.hotel{
+    .content{
+      border: 1px solid $main-color;
+      border-top: none;
+    }
+    .hotel-name{
+      font-weight: bold;
+      line-height: 20px;
+    }
+    .address{
+      margin-top: 10px;
+      font-size: 12px;
+      color: #999;
+      line-height: 15px;
+    }
+    .icon-pos{
+      @include setIcon2x($imgURL_20170614+'/tmc/schedule/icon-pos2x.png',7px,11px,center,center);
+      margin-right: 5px;
+    }
+    .head{
+      background-image:linear-gradient(157deg, #e1c697 0%, #c7a374 50%);
+      & > .type i{
+        @include setIcon2x($imgURL_20170614 + '/tmc/schedule/icon-hotel2x.png',16px,15px,center,center)
+      }
+      & > .id{
+         float: right;
+      }
+    }
+  }
+}

@@ -1,0 +1,769 @@
+@import "../global-m.scss";
+@import "../module/tmc-cover.scss";
+@import "../components/tmc-tab.scss";
+@import "../module/select-con.scss";
+@import "../base/imgURL.scss";
+@import "../base/tmc-animation.scss";
+.hui-fadeoutT{
+  -webkit-animation:.25s ease-in forwards;
+  animation:.25s ease-in forwards;
+  -webkit-animation-name:fadeoutT;
+  animation-name:fadeoutT;
+}
+@mixin setIcon($src,$width,$height,$X,$Y) {
+  width: $width;
+  height: $height;
+  background: url($src) no-repeat $X $Y;
+}
+html,body,.tmc-flightlist{
+  height: 100%;
+}
+.tmc-main.tmc-flightlist{
+  position: fixed;
+  top: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 60px;
+  overflow-y: auto;
+}
+.tmc-flight-header{
+  .flight-head {
+     width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+  }
+  .city{
+     height: 22px;
+     line-height: 22px;
+    font-size: 16px;
+     overflow: hidden;
+  }
+  .date{
+     height: 18px;
+     line-height: 12px;
+     overflow: hidden;
+    font-size: 12px;
+  }
+    .policy{
+       position: absolute;
+       top: 0;
+       right: 8px;
+       font-size: 12px;
+    }
+  .icon-flightline{
+    @include setIcon($imgURL_org + '/tmc/flight/icon-flight2x.png',15px,15px,0,0);
+    background-size: 100%;
+    vertical-align: middle;
+    margin: 0 10px;
+  }
+}
+.m-date{
+  position: fixed;
+  top:40px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #b19763;
+  color: #fff;
+  z-index: 3;
+  & > ul{
+      float: left;
+      width: 82%;
+    & > li{
+      padding: 4px 0;
+      float: left;
+      width: 14.2%;
+      white-space: nowrap;
+      font-size: 14px;
+      text-align: center;
+      .week,
+      .price{
+         color:#efe1bb;
+         transform: scale(.7);
+         height: 12px;
+         line-height: 12px;
+      }
+      .day{
+         height: 18px;
+         line-height: 18px;
+      }
+      &.active {
+         background: #d6b864;
+      }
+    }
+  }
+  & > .date-opt{
+      .icon-cal{
+        @include setIcon($imgURL_org + '/tmc/flight/icon-cal2x.png',16px,16px,center,center);
+        background-size: 100%;
+        margin: 8px 0 2px 0;
+      }
+    p{
+      transform: scale(.85);
+    }
+      float: left;
+      width: 18%;
+      height: 100%;
+      border-left: 1px solid #ccb882;
+      font-size: 12px;
+      color: #fff;
+      text-align: center;
+  }
+}
+.m-trip{
+  position: fixed;
+  margin-top: 90px;
+  margin-bottom: 10px;
+  width: 100%;
+  background:#fff;
+  padding: 5px 15px;
+  z-index: 2;
+  //border-bottom: 1px solid #eee;
+  span.tag{
+    float: left;
+    height: 20px;
+    width: 20px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 12px;
+    background:$main-color;
+    line-height: 1.5;
+    text-align: center;
+    margin: 10px 0;
+  }
+  .flight-con {
+    float: left;
+    margin-left: 15px;
+    width: 80%;
+    overflow: hidden;
+    p {
+      font-size: 12px;
+      color: #666;
+      line-height: 20px;
+    }
+    span{
+      margin-left: 8px;
+    }
+  }
+  .icon-next{
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    margin-top: -12px;
+    @include setIcon($imgURL_org + '/tmc/tmc-sprite-arrow.png',16px,20px,0,-25px);
+  }
+}
+.m-trip.hide + .m-flights{
+  margin-top: 90px;
+}
+.m-flights{
+   width: 100%;
+   min-height: 95%;
+   overflow-x: hidden;
+   overflow-y: auto;
+   background: #fff;
+   margin-top: 150px;
+  .flight-con{
+    width: 95%;
+    margin: 0 2.5%;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+    font-size: 12px;
+    color: #999;
+    line-height: 20px;
+    padding: 15px 0;
+    &:last-child{
+      border-bottom: none;
+    }
+    & > div{
+      float: left;
+    }
+    & > .dep,
+    & > .arr{
+      width: 25%;
+      & > .airport{
+        white-space: nowrap;
+        overflow: visible;
+      }
+    }
+    & > .duration{
+      width: 20%;
+      background: url($imgURL_org + '/tmc/flight/flightline2x.png') center no-repeat;
+      background-size: 100%;
+      height: 20px;
+      span.jingting{
+        display: inline-block;
+        vertical-align: middle;
+        height: 20px;
+        padding: 0 5px;
+        line-height: 18px;
+        background: #fff;
+        border-radius: 2px;
+        border: 1px solid $main-color;
+        color: $main-color;
+        transform: scale(.85);
+      }
+    }
+    & > .dep,
+    & > .arr,
+    & > .duration{
+      text-align: center;
+    }
+    & > .price{
+      width: 30%;
+      text-align: right;
+      font-size:18px;
+      color:$highlight-color;
+      i{
+        font-size: 12px;
+      }
+      span{
+        font-size: 12px;
+        color: #999;
+        margin-left: 4px;
+      }
+    }
+    .time{
+      position: relative;
+      font-size:18px;
+      color:#222222;
+      span.over-day{
+        font-size: 12px;
+        position: absolute;
+        top:-2px;
+        display: inline-block;
+        width: 36px;
+        color: #666;
+        text-align: left;
+        transform: scale(.85);
+      }
+    }
+    & > .detail{
+      width: 100%;
+      span{
+        margin:2.5px 5px;
+        display: inline-block;
+        vertical-align: middle;
+        height: 15px;
+        line-height: 15px;
+        border-left: 1px solid #ddd;
+        padding-left: 5px;
+        i.share{
+          margin-left: 5px;
+          color: $main-color;
+        }
+        &:first-child{
+          border: none;
+          & > img{
+            width: 1.08rem;
+            height: 1.08rem;
+            margin-right:5px;
+          }
+        }
+        &.fr{
+          display: inline-block;
+          vertical-align: top;
+          height: 20px;
+          padding: 0 4px;
+          border: 1px solid $highlight-color;
+          color: $highlight-color;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+}
+
+.tmc-footer.flight-footer{
+  background: #000;
+  opacity: .69;
+  z-index: 4;
+  .footer-item{
+    width: 33%;
+    &.active{
+      a{color: $main-font-color;}
+    }
+  }
+}
+.notice-cover{
+  z-index: 1031;
+  display:none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  .tmc-header{
+    border:none;
+    .nav-tabs{
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+  .tab-content{
+    margin-top: 40px;
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+  }
+  .notice-item{
+    .title{
+      border-left: 4px solid $main-color;
+      padding-left: 8px;
+      font-size: 14px;
+      height: 16px;
+      line-height: 16px;
+      margin: 8px 0;
+    }
+    .content{
+      font-size:12px;
+      color:#666;
+      line-height:20px;
+    }
+  }
+}
+.layer-fliter{
+   .fliter-head{
+     background:#525252;
+     width:100%;
+     line-height: 46px;
+     height:46px;
+     font-size: 14px;
+     color: #fff;
+     padding: 0 15px;
+   }
+  .nav-tabs{
+    width: 35%;
+    float: left;
+    height: 100%;
+    background: #eee;
+    & > li{
+      float: left;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      text-align: center;
+      line-height: 50px;
+      color: #333;
+      font-size: 14px;
+      opacity: 1;
+      span{
+        width: 6px;
+        height: 6px;
+        border-radius: 3px;
+        margin-right: 3px;
+        display: inline-block;
+      }
+      &.active{
+        background: #fff;
+      }
+      &.slt-con{
+        span{
+          background-color: $highlight-color;
+        }
+      }
+    }
+    &.sub-tab{
+      width: 45%;
+      background: #fff;
+      border-right: 1px solid #ddd;
+      & > li{
+        width: 93%;
+        margin-left: 7%;
+        color: #333;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+        &.active{
+          border-color: $main-color;
+        }
+      }
+    }
+  }
+  .tab-content{
+    width: 65%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    .tab-panel {
+      height: 100%;
+      background-color:#fff;
+    }
+    &.sub-tab-content{
+      width: 55%;
+      background: #fff;
+    }
+    ul{
+      padding-left: 4%;
+      background: #fff;
+      max-height: 300px;
+      overflow: auto;
+      li{
+        width: 96%;
+        color: #333;
+        font-size: 14px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+        line-height: 50px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-align: center;
+        background: #fff;
+        &.active{
+          color: #d6b045;
+          border-color: $main-color;
+        }
+      }
+    }
+  }
+}
+.detail-cover{
+  background: #eee;
+  .flight-con{
+    width: 95%;
+    margin: 0 2.5%;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+    font-size: 12px;
+    color: #999;
+    line-height: 20px;
+    padding: 15px 0;
+    &:last-child{
+      border-bottom: none;
+    }
+    & > div{
+      float: left;
+    }
+    & > .dep,
+    & > .arr{
+      width: 25%;
+      & > .airport{
+        white-space: nowrap;
+        overflow: visible;
+      }
+    }
+    & > .duration{
+      width: 20%;
+      background: url($imgURL_org + '/tmc/flight/flightline2x.png') center no-repeat;
+      background-size: 100%;
+      height: 20px;
+      span.jingting{
+        display: inline-block;
+        vertical-align: middle;
+        height: 20px;
+        padding: 0 5px;
+        line-height: 18px;
+        background: #fff;
+        border-radius: 2px;
+        border: 1px solid $main-color;
+        color: $main-color;
+        transform: scale(.85);
+      }
+    }
+    & > .dep,
+    & > .arr,
+    & > .duration{
+      text-align: center;
+    }
+    & > .price{
+      width: 30%;
+      text-align: right;
+      font-size:18px;
+      color:$highlight-color;
+      i{
+        font-size: 12px;
+      }
+      span{
+        font-size: 12px;
+        color: #999;
+        margin-left: 4px;
+      }
+    }
+    .time{
+      position: relative;
+      font-size:18px;
+      color:#222222;
+      span.over-day{
+        font-size: 12px;
+        position: absolute;
+        top:-2px;
+        display: inline-block;
+        width: 36px;
+        color: #666;
+        text-align: left;
+        transform: scale(.85);
+      }
+    }
+    & > .detail{
+      width: 100%;
+      span{
+        margin:2.5px 5px;
+        display: inline-block;
+        vertical-align: middle;
+        height: 15px;
+        line-height: 15px;
+        border-left: 1px solid #ddd;
+        padding-left: 5px;
+        i.share{
+          margin-left: 5px;
+          color: $main-color;
+        }
+        &:first-child{
+          border: none;
+          & > img{
+            width: 1.08rem;
+            height: 1.08rem;
+            margin-right:5px;
+          }
+        }
+        &.fr{
+          display: inline-block;
+          vertical-align: top;
+          height: 20px;
+          padding: 0 4px;
+          border: 1px solid $highlight-color;
+          color: $highlight-color;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+  .flight-con{
+    position: fixed;
+    left: 0;
+    top:40px;
+    width: 100%;
+    height: 96px;
+    overflow: hidden;
+    color: #fff;
+    background: $main-color;
+    margin: 0;
+    padding: 12px 2.5%;
+    border-top:1px dashed #f5e1ac;
+    z-index: 3;
+    .time{
+      color: #fff;
+      line-height: 25px;
+      font-size: 22px;
+      font-family: Arial;
+      span.over-day{
+        color: #fff;
+      }
+    }
+    .airport{
+      font-size: 14px;
+      line-height: 20px;
+    }
+    & > .dep,
+    & > .arr,
+    & > .duration {
+      width: 33%;
+    }
+    & > .detail{
+      text-align: center;
+      color:#efe1ba;
+      line-height: 25px;
+    }
+    & > .duration{
+      position: relative;
+      height: 45px;
+      background: url($imgURL_org + '/tmc/flight/line2x.png') center no-repeat;
+      background-size: 60%;
+      span.jt-txt{
+        position: absolute;
+        top: 25px;
+        left: 0;
+        display: inline-block;
+        width: 100%;
+        vertical-align: top;
+      }
+    }
+  }
+  .m-cabins{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 136px;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+      p{
+        font-size:12px;
+        color:#666;
+        padding-left: 10px;
+        line-height: 33px;
+      }
+  }
+  .cabin-list{
+    width: 100%;
+    background: #fff;
+  }
+  .cabin-con{
+    width: 94%;
+    height: 70px;
+    margin: 0 3%;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 10px 0;
+    font-size: 12px;
+    color: #999;
+    line-height: 20px;
+    & >.fl .price{
+      line-height: 25px;
+      font-size:18px;
+      color: $highlight-color;
+      i{
+        font-size: 12px;
+      }
+    }
+    & >.fl .detail{
+      line-height: 25px;
+      span.refund-tip{
+        margin-left: 10px;
+      }
+    }
+    .icon-next{
+       @include setIcon($imgURL_org + '/tmc/tmc-sprite-arrow.png', 20px ,20px,4px,-24px);
+    }
+    &:last-child{
+      border-bottom: none;
+    }
+    .btn-book{
+      border-radius: 2px;
+      margin: 10px 0;
+      line-height: 30px;
+      min-width: 52px;
+      padding: 0 10px;
+      height:30px;
+      font-size: 14px;
+    }
+  }
+}
+.reason-cover{
+  .std-cont{
+     width: 100%;
+     padding: 15px 20px;
+    font-size:14px;
+    color:#333;
+    & > .item{
+      margin-bottom: 10px;
+    }
+    & > .item >p{
+      line-height: 20px;
+      position: relative;
+      font-weight: bold;
+      span{
+        position: absolute;
+        top: 3px;
+        left: -10px;
+        display: inline-block;
+        vertical-align: middle;
+        height: 14px;
+        width: 4px;
+        background: $main-color;
+      }
+    }
+  }
+  .std-list > .item{
+    line-height: 50px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    .select-box{
+      position: absolute;
+      top: 15px;
+      right: 0;
+       float: right;
+       width: 20px;
+      height: 20px;
+       border-radius: 10px;
+       border: 1px solid $main-color;
+    }
+    &.active .select-box,
+    .select-box.active{
+      border: none;
+      @include setIcon($imgURL_org + '/tmc/flight/icon-radio2x.png',20px,20px,center,center);
+      background-size: 100%;
+    }
+    &:last-child{
+      border-bottom: none;
+    }
+  }
+  & .cover-con > .opt{
+    width: 100%;
+    padding: 0 20px;
+  }
+  .btn-save{
+    width: 100%;
+    border-radius: 4px;
+  }
+  .std-tip{
+    margin-top: 10px;
+    background: $main-color-light;
+    font-size: 14px;
+    color: #333;
+    padding: 15px 20px;
+    .std-flight{
+      margin-top: 10px;
+      font-size:14px;
+      color:$main-color;
+      span{
+        float: left;
+        width: 33%;
+      }
+    }
+    .opt{
+      margin-top: 10px;
+      .btn-book{
+        border-radius: 4px;
+      }
+    }
+  }
+}
+.refundtip-cover{
+   .cover-con{
+     padding: 50px 20px 20px;
+     font-size: 14px;
+     color: #666;
+     line-height: 20px;
+   }
+  .tip{
+     font-size: 12px;
+    color: #333;
+    span{
+      float: left;
+      text-align: center;
+      background: #d6b864;
+      border-radius: 2px;
+      width: 55px;
+      height: 20px;
+      color: #fff;
+      margin-right: 10px;
+      margin-bottom: 15px;
+    }
+  }
+  p.title{
+    color: #333;
+    font-weight: bold;
+    line-height: 30px;
+  }
+  table{
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+  }
+  table tr>td{
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    padding: 10px;
+    &:first-child{
+      width: 35%;
+    }
+    &:last-child{
+      width: 65%;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+/**
+** cdn图片路径配置
+** @update info @v1.0.0 fanjiejing 2017-4-14 11:45
+**/
+$imgURL_org: 'https://ssl.tuniucdn.com/img/20170607/jinrong/tmc/m/img';
+//$imgURL_org: 'http://mcdn.tuniu-sit.org/img/20170607/jinrong/tmc/m/img';
+
+$imgURL_20170614: 'https://ssl.tuniucdn.com/img/20170614/jinrong/tmc/m/img';
+//$imgURL_20170613: '../../img';
+
+$imgURL_20170620: 'https://ssl.tuniucdn.com/img/20170626/jinrong/tmc/m/img';
+//$imgURL_20170620: '../../img';
+
+
+@function imgUrl($path){
+  @return unquote($imgURL_org + $path);
+}

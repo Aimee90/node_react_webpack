@@ -1,0 +1,11 @@
+.select-box{
+  display: inline-block;
+  vertical-align: middle;
+  height: 18px;
+  width: 18px;
+  border: 1px solid $main-color;
+  border-radius: 4px;
+}
+.active .select-box{
+  background: url($icons01) -163px -72px no-repeat;
+}

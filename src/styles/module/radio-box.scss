@@ -1,0 +1,10 @@
+.radio-box {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url($imgURL_org + '/tmc/radios.png') -40px 1px no-repeat;
+  cursor: pointer; }
+
+.selected.radio-box {
+  background-position: 0 0; }

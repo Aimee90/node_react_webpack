@@ -1,0 +1,165 @@
+@import "../global-m.scss";
+@import "../base/imgURL.scss";
+body{
+	background: #fff;
+}
+.icon-pos {
+	width: 14px;
+	height: 20px;
+	background: url($imgURL_org + '/tmc/icon-pos.png') no-repeat 0 0;
+	vertical-align: middle;
+}
+.main-container{
+	.m-welcome{
+		background:#fbf7ee;
+		border:0 solid #fbf7ee;
+		box-shadow:0 0 8px 0 rgba(153,138,119,0.28);
+		width:100%;
+		height:60px;
+		line-height: 60px;
+		white-space: nowrap;
+		padding: 0 48px;
+		overflow: hidden;
+		span{
+			font-size:14px;
+			font-weight: bold;
+			color:$main-color;
+			letter-spacing:-0.34px;
+		}
+	}
+	.m-menu{
+		width: 100%;
+		min-height: 495px;
+		background: url($imgURL_org + '/tmc/welcome-bg.png') center top no-repeat;
+		background-size: cover;
+		padding: 40px 12%;
+		margin-bottom: 50px;
+	}
+	.unable.menu-item{
+		border:1px solid #c1c1c1;
+		box-shadow:2px 2px 6px 1px rgba(199,163,116,0.28);
+		p{
+			color:#c1c1c1;
+		}
+		&.menu-trip{
+			background: url($imgURL_org + '/tmc/welcome/tag-await2x.png') -1px -1px no-repeat;
+			background-size: 25%;
+			background-color: #fff;
+			.icon-trip{
+				background: url($imgURL_org + '/tmc/welcome/icon-trip-unable2x.png') 0 0 no-repeat;
+				background-size: 99%;
+			}
+		}
+		&.menu-flight{
+			background: url($imgURL_org + '/tmc/welcome/tag-await2x.png') -1px -1px no-repeat;
+			background-size: 38%;
+			background-color: #fff;
+			.icon-flight{
+				background: url($imgURL_org + '/tmc/welcome/icon-flight-unable2x.png') 0 0 no-repeat;
+				background-size: 100%;
+			}
+		}
+		&.menu-hotel{
+			background: url($imgURL_org + '/tmc/welcome/tag-await2x.png') -1px -1px no-repeat;
+			background-size: 20%;
+			background-color: #fff;
+			.icon-hotel{
+				background: url($imgURL_org + '/tmc/welcome/icon-hotel-unable2x.png') 0 0 no-repeat;
+				background-size: 100%;
+			}
+		}
+	}
+	.menu-item{
+		position: relative;
+		float: left;
+		
+		background:#fff;
+		border:1px solid #c7a374;
+		box-shadow:2px 2px 6px 1px rgba(199,163,116,0.28);
+		border-radius:4px;
+
+		p{
+			font-size:14px;
+			color:#a1875f;
+		}
+		&.menu-trip{
+			width: 100%;
+			height: 180px;
+			padding:45px 10% 30px 10%;
+			p{
+				float: right;
+				margin-right: 12%;
+				margin-top: 20px;
+				width: 50px;
+				font-size: 22px;
+				line-height: 25px;
+			}
+			.icon-trip{
+				width: 106px;
+				height: 106px;
+				background: url($imgURL_org + '/tmc/tmc-sprites.png') -22px -100px no-repeat;
+			}
+			.icon-add{
+				z-index: 2;
+				position: absolute;
+				top: 50%;
+				right: -33px;
+				margin-top: -33px;
+				width: 66px;
+				height: 66px;
+				background: url($icon_add) no-repeat -20px -28px;
+			}
+		}
+		&.menu-flight,
+		&.menu-train{
+			padding: 10px;
+			margin-top: 20px;
+			width: 46.5%;
+			height: 120px;
+			text-align: center;
+			i{
+				position: absolute;
+				width: 65px;
+				height: 65px;
+				top: 18px;
+				left: 50%;
+				margin-left: -32.5px;
+			}
+			p{
+				margin-top: 75px;
+				line-height: 20px;
+			}
+		}
+		&.menu-flight{
+			margin-right: 3.5%;
+			.icon-flight{
+				background: url($sprite) no-repeat -263px -129px;
+			}
+		}
+		&.menu-train{
+			margin-left: 3.5%;
+			.icon-train{
+				background: url($sprite) no-repeat -164px -129px;
+			}
+		}
+		&.menu-hotel{
+			width: 100%;
+			margin-top: 20px;
+			height: 80px;
+			.icon-hotel{
+				position: absolute;
+				top: 7.5px;
+				left: 25%;
+				width: 65px;
+				height: 65px;
+				background: url($sprite) no-repeat -359px -129px;
+			}
+			p{
+				float: right;
+				margin-top: 30px;
+				margin-right: 22%;
+			}
+		}       
+	}
+}
+@import "../module/footer-icons.scss";

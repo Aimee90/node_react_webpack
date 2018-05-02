@@ -1,0 +1,153 @@
+/**
+** 机票首页样式
+** @author fanjiejing
+** @date 2017-5-12
+**/
+@import "../global-m.scss";
+@import "../base/tmc-animation.scss";
+@import "../base/switch.scss";
+@import "../base/imgURL.scss";
+@import "../components/tmc-tab.scss";
+.switchRight {
+  -webkit-transform: translateX(360%);
+  transform: translateX(360%);
+  transition: all .2s cubic-bezier(0.42,0,0,1.03);
+  -webkit-transition: all .2s cubic-bezier(0.42,0,0,1.03);
+}
+
+.switchLeft {
+  -webkit-transform: translateX(-360%);
+  transform: translateX(-360%);
+  transition: all .2s cubic-bezier(0.42,0,0,1.03);
+  -webkit-transition: all .2s cubic-bezier(0.42,0,0,1.03);
+}
+.price{
+  color: $highlight-color;
+}
+.btn-search{
+  border-radius:4px;
+  width: 100%;
+  height:40px;
+  font-size: 18px;
+  margin: 10px 0 20px 0;
+  line-height: 1;
+}
+.tmc-flight{
+  overflow: hidden;
+}
+.nav-tabs{
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #e4e4e4;
+  height: 42px;
+  li{
+    position: relative;
+    text-align: center;
+    width: 50%;
+    line-height: 41px;
+    font-size: 16px;
+    color: #666;
+    &.active{
+      color: $main-font-color;
+      span{
+        position: absolute;
+        display: inline-block;
+        width: 38px;
+        height: 3px;
+        background: $main-color;
+        bottom: 0;
+        left: 50%;
+        margin-left: -19px;
+      }
+    }
+  }
+}
+.m-search{
+  padding: 0 5%;
+  width: 100%;
+  background: #fff;
+  & > div{
+    min-height: 64px;
+  }
+  .start-arrive{
+    & > div{
+      float: left;
+      height: 100%;
+      z-index: 999;
+    }
+    .change-ico{
+      width: 20%;
+      height: 64px;
+      text-align: center;
+      padding: 12px 0;
+      overflow: hidden;
+      background: url($imgURL_org + '/tmc/icon-flight2x.png') center no-repeat;
+      background-size: 18px;
+      .icon-exchange{
+        background: url($imgURL_org +'/tmc/icon-flight-change2x.png') 0 0 no-repeat;
+        background-size: 100%;
+        width: 31px;
+        height: 31px;
+        vertical-align: middle;
+        margin-top: 4px;
+        transition: transform 1s cubic-bezier(0.42, 0, 0.1, 1.13);
+        -webkit-transition: transform 1s cubic-bezier(0.42, 0, 0.1, 1.13);
+      }
+    }
+    .dep-station,
+    .arr-station{
+      width: 40%;
+      border-bottom: 1px solid #eee;
+      height: 64px;
+      display: table;
+      span{
+        width: 100%;
+        height: 64px;
+        font-size: 20px;
+        color: #666;
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+    .arr-station{
+      text-align: right;
+    }
+  }
+  .start-date,
+  .end-date{
+    width: 50%;
+    float: left;
+    padding: 20px 0;
+    //border-bottom: 1px solid #eee;
+    span{
+      font-size: 20px;
+    }
+    i{
+      margin-left: 5px;
+      vertical-align: bottom;
+      font-size: 14px;
+      color: #999;
+    }
+  }
+  .end-date{
+    text-align: right;
+    span, i {
+       visibility: hidden;
+    }
+  }
+  &.muti-trip .end-date{
+    span, i {
+      visibility: visible;
+    }
+  }
+  .motor-train{
+    padding: 20px 0;
+    span{
+      font-size: 14px;
+      color: #666;
+    }
+    .switch-icon{
+      float: right;
+    }
+  }
+}

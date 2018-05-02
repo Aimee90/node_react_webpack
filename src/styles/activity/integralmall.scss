@@ -1,0 +1,114 @@
+@charset "UTF-8";
+@import "../base/imgURL.scss";
+.gift-con .gift-cost, .gift-con .gift-name {
+  height: 2em;
+  line-height: 2em;
+  color: #fff
+}
+
+.main-container, body {
+  background-color: #3c5295
+}
+
+.main-content {
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: .75em;
+  overflow: hidden
+}
+
+.gift-con, .gift-con .gift-cost, .gift-con .gift-name, .section .showmore {
+  font-size: 1em;
+  text-align: center
+}
+
+.more-gifts {
+  display: none
+}
+
+.section {
+  position: relative
+}
+
+.section .bg-cover {
+  width: inherit;
+  overflow: hidden;
+  z-index: 1
+}
+
+.section .bg-cover img {
+  width: 100%
+}
+
+.section .showmore {
+  position: absolute;
+  top: .75em;
+  left: 50%;
+  display: inline-block;
+  width: 120px;
+  margin-left: -60px;
+  color: #fff106
+}
+
+@media screen and (min-width: 414px) {
+  .section {
+    margin-top: -1px
+  }
+}
+
+.gifts-con {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 80%;
+  margin-left: -40%;
+  padding-top: 2%;
+  z-index: 10
+}
+
+.gift-con {
+  position: relative;
+  width: 44%;
+  float: left;
+  margin: 3%
+}
+
+.gift-con .gift-pic {
+  width: 100%;
+  border: 2px solid #fed267;
+  background-color: #fff;
+  overflow: hidden
+}
+
+.gift-con .gift-pic img {
+  width: 100%
+}
+
+.gift-con .gift-cost {
+  margin: 0 10%;
+  width: 80%;
+  border-radius: 1em;
+  -webkit-border-radius: 1em;
+  background-color: #22b8ff
+}
+
+.gift-con .gift-price {
+  position: absolute;
+  top: -1em;
+  right: -.5em;
+  width: 4em;
+  height: 4em;
+  background: url($imgURL_org + '/activity/mall-tag.png') no-repeat;
+  background-size: contain;
+  z-index: 11;
+  font-size: 12px;
+  text-align: center;
+  color: #fff
+}
+
+.gift-con .gift-price p {
+  margin-top: 22px;
+  font-size: 1em;
+  text-align: center
+}

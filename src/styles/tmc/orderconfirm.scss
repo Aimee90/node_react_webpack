@@ -1,0 +1,437 @@
+@import "../global-m.scss";
+@import "../module/tmc-cover.scss";
+.tmc-confirm{
+  &.time-out{
+    &>.tip{
+      display: none;
+    }
+    .m-flights,.m-trains,.m-hotel{
+      border-top: 1px dashed #f5e1ac;
+    }
+  }
+  &>.tip{
+    background: #fef5d6;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #666;
+    .time{
+      color: $highlight-color;
+    }
+  }
+  .m-flights{
+    background: $main-color;
+    width: 100%;
+    min-height: 125px;
+    .flight-con{
+      width: 100%;
+      overflow: hidden;
+      color: #fff;
+      background: $main-color;
+      margin: 0;
+      padding: 12px 5%;
+      z-index: 3;
+      font-size: 12px;
+      line-height: 20px;
+      &+hr{
+        width: 90%;
+        margin: 0 5%;
+        height: 1px;
+        border: none;
+        background: #e4cc87;
+      }
+      &>div{
+        float: left;
+      }
+      &>.trip{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+        span.tag{
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          line-height: 18px;
+          text-align: center;
+          font-size: 12px;
+          vertical-align: initial;
+          margin-right: 14px;
+          border-radius: 2px;
+          -webkit-transform: scale(.8);
+          transform: scale(.8);
+        }
+        &.dep-trip{
+          span.tag{
+            background: #fff;
+            color: $main-color;
+            border: 1px solid #fff;
+          }
+        }
+        &.arr-trip{
+          span.tag{
+            color: #fff;
+            border: 1px solid #fff;
+          }
+        }
+      }
+      &>.detail{
+        color:#fff;
+      }
+      &>.arr,&>.dep,&>.price{
+        width: 33%;
+        text-align: right;
+        font-size: 18px;
+        color: #f46d6d;
+      }
+      &>.dep{
+        text-align: left;
+      }
+      &>.arr{
+        text-align: right;
+      }
+      &>.detail{
+        width: 100%;
+        text-align: center;
+        color: #efe1ba;
+        line-height: 25px;
+        span{
+          margin: 2.5px 5px;
+          display: inline-block;
+          vertical-align: middle;
+          height: 15px;
+          line-height: 15px;
+          border-left: 1px solid #efe1ba;
+          padding-left: 5px;
+         &:first-child{
+           border: none;
+         }
+          img{
+            vertical-align: top;
+            margin-right: 5px;
+          }
+        }
+        img{
+          border: none;
+          vertical-align: middle;
+          width: 16px;
+          height: 16px;
+        }
+      }
+      .time{
+        position: relative;
+        color: #fff;
+        line-height: 25px;
+        font-size: 22px;
+        font-family: Arial;
+        span.over-day{
+          font-size: 12px;
+          position: absolute;
+          top: -15px;
+          right: -15px;
+          display: inline-block;
+          width: 36px;
+          text-align: left;
+          -webkit-transform: scale(.85);
+          transform: scale(.85);
+          color: #fff;
+        }
+      }
+      .airport{
+        font-size: 14px;
+        line-height: 20px;
+        color: #fff;
+      }
+      &>.duration{
+        width: 33%;
+        position: relative;
+        height: 45px;
+        text-align: center;
+        background: url(https://ssl.tuniucdn.com/img/20170607/jinrong/tmc/m/img/tmc/flight/line2x.png) center no-repeat;
+        background-size: 60%;
+        span.jt-txt{
+          position: absolute;
+          top: 25px;
+          left: 0;
+          display: inline-block;
+          width: 100%;
+          vertical-align: top;
+        }
+      }
+      &>.draw-time{
+        width: 100%;
+        i{
+          height: 16px;
+          width: 16px;
+          margin-right: 5px;
+          vertical-align: middle;
+          &.icon-arr{
+            background: url(https://ssl.tuniucdn.com/img/20170607/jinrong/tmc/m/img/tmc/tabs/arr-off2x.png) no-repeat;
+            background-size: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .m-trains{
+    background: $main-color;
+    width: 100%;
+    min-height: 100px;
+    padding: 10px 5%;
+    color: #fff;
+    &>div{
+      float: left;
+      width: 33%;
+      font-size: 14px;
+      line-height: 25px;
+      .station {
+        width: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .time{
+        font-size: 22px;
+        font-family: Arial;
+      }
+      .data{
+        font-family: Arial;
+        font-size: 12px;
+        span{
+          font-family: PingFangSC,"Microsoft Yahei";
+        }
+      }
+    }
+    .train-info{
+      text-align: center;
+      padding: 10px 0;
+      .train-no{
+        font-size: 16px;
+      }
+      .start-end{
+        width: 100%;
+        height: 25px;
+        text-align: center;
+        span{
+          display: inline-block;
+          width: 65px;
+          height: 25px;
+          background: url(https://ssl.tuniucdn.com/img/20170607/jinrong/tmc/m/img/tmc/jingting.png) -6px 2px no-repeat;
+        }
+      }
+    }
+    .arr-info{
+      text-align: right;
+    }
+  }
+
+  .m-hotel{
+    &>.hotel-content{
+      background: #fff;
+      padding: 12px 10px;
+      margin-bottom: 2px;
+      font-size: 14px;
+    }
+    &>.hotel-info{
+      &>.title{
+        font-size: 16px;
+        color: #333;
+        line-height: 30px;
+      }
+      &>.info{
+        font-size: 12px;
+        color: #999;
+        line-height: 20px;
+      }
+    }
+    &>.hotel-basic{
+      padding: 12px 0;
+      &>.date{
+        border-bottom: 1px dashed #eee;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        &>div{
+          float: left;
+          width: 33.3%;
+          text-align: center;
+        }
+        &>.end,&>.start{
+          text-align: left;
+          padding-left: 10px;
+        }
+        p{
+          line-height: 25px;
+          font-size: 12px;
+          color: #333;
+          &.date{
+            color: #666;
+            font-size: 16px;
+            font-family: Arial;
+          }
+          &.line{
+            height: 1px;
+            width: 80%;
+            background: #d8d8d8;
+            margin: 5px auto;
+          }
+        }
+        .duration span{
+          font-size: 12px;
+          color: #999;
+        }
+      }
+      &>.tip{
+        font-size: 12px;
+        color: #999;
+        padding: 7.5px 10px;
+        line-height: 20px;
+      }
+    }
+  }
+
+
+  .m-content{
+    margin: 0 0 2px;
+    background: #fff;
+    padding: 0 10px;
+    width: 100%;
+    &>.title{
+      line-height: 50px;
+      font-size: 14px;
+      color: #333;
+    }
+    .pass-info{
+      padding: 0 0 10px;
+      font-size: 12px;
+    }
+    &.m-contact,&.m-approver{
+      .info-item{
+        &>.value{
+          color: #333;
+        }
+      }
+    }
+    &.m-contact,&.m-approver,&.m-ins{
+      &>div{
+        float: left;
+      }
+      &>.title{
+        width: 33%;
+      }
+      &>.info{
+        width: 66%;
+        font-size: 14px;
+        color: #333;
+        text-align: right;
+        padding: 12px 0;
+      }
+    }
+    .info-item{
+      display: table;
+      width: 100%;
+      &>.name,&>.value{
+        display: table-cell;
+        font-size: 12px;
+        line-height: 25px;
+        color: #666;
+      }
+      &>.name{
+        width: 20%;
+      }
+      &>.value{
+        text-align: right;
+        width: 80%;
+      }
+    }
+  }
+}
+
+.tmc-confirm-footer{
+  background: #fff;
+  border-top: 1px solid #ddd;
+  z-index: 1051;
+  &>.order-bill{
+    float: left;
+    line-height: 50px;
+    padding: 0 10px;
+    font-size: 14px;
+    color: #333;
+    max-width: 320px;
+    span{
+      margin-left: 4px;
+      &.price{
+        color: $highlight-color;
+      }
+    }
+  }
+  &>button{
+    float: right;
+    height: 50px;
+    &.btn-next{
+      margin-left: 3%;
+      width: 30%;
+      background: $main-color;
+      color: #fff;
+      font-size: 16px;
+      white-space: nowrap;
+      &.disabled{
+        background: #ddd;
+      }
+    }
+  }
+}
+.jinting-cover{
+  padding: 10px;
+  .cover-con{
+    .duration{
+      height: 40px;
+      line-height: 40px;
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+    }
+    table{
+      width: 100%;
+      border-collapse:collapse;
+      tr{
+        width: 100%;
+      }
+      th,td{
+        width: 30%;
+        height: 40px;
+        line-height: 1;
+        font-size: 14px;
+        text-align: center;
+      }
+      tr{
+        th:first-child,
+        td:first-child{
+          width: 10%;
+          span{
+            display: inline-block;
+            vertical-align: middle;
+            background: $main-font-color;
+            height: 16px;
+            width: 16px;
+            border-radius: 8px;
+            -webkit-border-radius: 8px;
+            color: #fff;
+            line-height: 16px;
+            font-size: 12px;
+          }
+        }
+      }
+      th{
+        //font-size: #333;
+        font-weight: normal;
+        border-bottom: 1px solid #e8e8e8;
+      }
+      td{
+        color: #666;
+      }
+    }
+  }
+}
+

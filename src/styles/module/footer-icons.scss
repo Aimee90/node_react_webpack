@@ -1,0 +1,55 @@
+@mixin setIcon($src,$width,$height,$X,$Y) {
+    width: $width;
+    height: $height;
+    background: url($src) no-repeat $X $Y;
+}
+@mixin setIcon2x($src,$width,$height,$X,$Y) {
+	width: $width;
+	height: $height;
+	background: url($src) no-repeat;
+	background-size: 100%;
+}
+.icon-home{
+    @include setIcon2x($imgURL_org + '/tmc/public/home-off2x.png',20px,20px,center,center);
+}
+
+.icon-approve{
+    @include setIcon2x($imgURL_org + '/tmc/public/approve-off2x.png',20px,20px,center,center);
+}
+
+.icon-schedule{
+    @include setIcon2x($imgURL_org + '/tmc/public/day-off2x.png' ,20px,20px,0,-1px);
+	background-position: 0 -1px;
+}
+
+.icon-admin2{
+    @include setIcon2x($imgURL_org + '/tmc/public/admin-off2x.png',20px,20px,center,center);
+}
+
+.active {
+	.icon-home{
+		@include setIcon2x($imgURL_org + '/tmc/public/home-on2x.png',20px,20px,center,center);
+	}
+
+	.icon-approve{
+		@include setIcon2x($imgURL_org + '/tmc/public/approve-on2x.png',20px,20px,center,center);
+	}
+
+	.icon-schedule{
+		@include setIcon2x($imgURL_org + '/tmc/public/day-on2x.png',20px,20px,0,-1px);
+	}
+
+	.icon-admin2{
+		@include setIcon2x($imgURL_org + '/tmc/public/admin-on2x.png',20px,20px,center,center);
+	}
+}
+.tmc-footer{
+	background:#f6f6f7;
+	border-top: 1px solid #d1d1d1;
+	width:100%;
+	.footer-item{
+    	&.active{
+    		a{color: #333;}
+    	}
+    }
+}

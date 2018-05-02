@@ -1,0 +1,243 @@
+@import "../global-m.scss";
+@import "../base/imgURL.scss";
+.price{
+	font-size: 14px;
+	color:$highlight-color;
+}
+.cancel-clr{
+	color: #999;
+}
+.btn-cancel{
+	//background: #c0c0c0!important;
+}
+.tag,
+.state-tag{
+	display: inline-block;
+	background: url($imgURL_org + '/tmc/tmc-sprite-tag.png');
+	vertical-align: middle;
+}
+.tag{
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	margin-right: 5px;
+	font-size: 14px;
+	border-radius: 4px;
+	transform: scale(.7);
+	color: #fff;
+	&.tag-start{
+		background: #7cc4ff;
+	}
+	&.tag-end{
+		background: #ef8787;
+	}
+	&.tag-guo{
+		background: #44d677;
+	}
+}
+.state-tag{
+	width: 35px;
+	height: 15px;
+	&.tag-gaiqian{
+		background-position: 0 -6px;
+	}
+	&.tag-tuipiao{
+		background-position: 0 -27px;
+	}
+}
+.tmc-main{
+    margin-bottom: 20px;
+}
+.m-loading{
+    width: 376px;
+    height: 100px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+.tmc-orderlist{
+	margin-bottom: 30px;
+}
+.tmc-orderlist{
+	.result-con{
+		text-align: center;
+	    margin-top: 100px;	
+	    img{
+	    	margin: 10px;
+	    }
+	    p{
+	   		font-size: 14px;
+    		color: #999;
+	    }
+	}
+
+}
+.m-order{
+	margin-top: 10px;
+	width: 100%;
+	min-height: 150px;
+	padding: 2.5% 2.5% 0 2.5%;
+	background: #fff;
+	.opt{
+		border-top: 1px dashed #e8e8e8;
+		height: 46px;
+		line-height: 46px;
+		.price {
+			font-weight: bold;
+			.rmb{
+				font-weight: normal;
+				font-size: 12px;
+			}
+		}
+		.btn-check {
+			display: inline-block;
+			height: 30px;
+			line-height: 30px;
+			width: 80px;
+			color: #fff;
+			text-align: center;
+			background: $main-color;
+			font-size: 12px;
+			border-radius: 4px;
+			vertical-align: middle;
+			margin: 8px 0;
+		}
+		.cancel-clr{
+			font-size: 14px;
+		}
+	}
+	.detail{
+		min-height: 94px;
+		font-size: 14px;
+		.head{
+			width: 100%;
+			font-size: 12px;
+			height: 25px;
+			line-height: 20px;
+		}
+		.order-type,
+		.order-state{
+			display: inline-block;
+			color: #666;
+			padding-left: 8px;
+			line-height: 12px;
+		}
+		.order-type{
+			border-right: 2px solid #999;
+			padding-right: 10px;
+			padding-left: 0;
+		}
+		.order-state.cancel{
+			color: #999;
+		}
+		.order-state.succ{
+			color: $main-font-color;
+		}
+		.order-state.refund{
+			color: $highlight-color;
+		}
+		.order-id{
+			color: #999;
+		}
+		.info{
+			width: 100%;
+			overflow: hidden;
+			color: #333;
+		}
+		.dep,
+		.arr{
+			line-height: 20px;
+			width: 33%;
+			.time{
+				margin-left: 20px;
+				font-size: 16px;
+			}
+		}
+		.d-a{
+			width: 33%;
+			min-width: 70px;
+			text-align: center;
+			.no{
+				margin-top: 6px;
+			}
+			.line{
+				width: 65px;
+				height: 10px;
+				margin: 0 auto;
+				background: url($imgURL_org + '/tmc/trainline.png') no-repeat 0 -42px;
+			}
+		}
+		.summary{
+			font-size: 12px;
+			color: #999;
+			padding-bottom: 10px;
+		}
+	}
+}
+.m-order.order-hotel{
+	.detail .info{
+		height: auto;
+		p{
+			font-size: 12px;
+			color: #999;
+			line-height: 20px;
+		}
+		p.name{
+			font-size: 14px;
+			color: #333;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+	}
+}
+.tmc-footer.orderlist-footer{
+	z-index: $zindex-layer + 1;
+	.footer-item{
+		width: 50%;
+		background: rgba(0,0,0,.7);
+		p{
+			color: #fff;
+		}
+		&.active p{
+			color: $main-color;
+		}
+	}
+    
+}
+.layer-fliter{
+	.fliter-con{
+		position: relative;
+		width: 100%;
+		text-align: center;
+		color: #666;
+		font-size: 14px;
+		height: 60px;
+		line-height: 60px;
+		border-bottom: 1px solid #e4e4e4;
+		&:last-child{
+			border: none;
+		}
+		
+		i.tag{
+            position: absolute;
+            top: 0;
+            right: 5%;
+		}
+		i.icon-dui{
+			top: 24px;
+			width: 15px;
+			height: 10px;
+			background: url($imgURL_org + '/tmc/dui.png') 0 0 no-repeat;
+		}
+	}
+	.btn-confirm{
+		width: 100%;
+		height: 44px;
+		font-size: 16px;
+	}
+}
+.layer-fliter-footer{
+	height: 50px;
+}

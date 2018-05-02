@@ -1,0 +1,218 @@
+.approve-con{
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+  width: 100%;
+  background:#fff;
+  border-radius:4px;
+  box-shadow:1px 1px 7px 0 rgba(196,196,196,0.50);
+  .head{
+    z-index: 1;
+    position: relative;
+    color:#fff;
+    width: 100%;
+    line-height: 40px;
+    border-radius: 4px 4px 0 0;
+    padding: 0 10px;
+    font-size: 14px;
+    & > .title{
+      text-align: center;
+      font-size: 16px;
+    }
+    & > .type{
+      i{
+        position: absolute;
+        opacity: .25;
+      }
+    }
+    & > .time-limit{
+      font-size: 12px;
+      i{
+        @include setIcon2x($imgURL_org + '/tmc/tabs/arr-off2x.png',16px,15px,center,center);
+        margin-right: 5px;
+        margin-top: -2px;
+      }
+    }
+  }
+  .content{
+    padding: 12px 15px 0 15px;
+    border-radius: 0 0 4px 4px;
+    font-size: 14px;
+    color: #333;
+  }
+  .journey{
+    font-size:18px;
+    color:#333;
+    span{
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 4px;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #fff;
+      border-radius: 2px;
+      transform: scale(.8);
+      &.tag-come{
+        background-color: #7cc4ff;
+      }
+      &.tag-back{
+        background-color: #44d677;
+      }
+    }
+  }
+  .detail{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    color: #666;
+    line-height: 20px;
+    & > .item{
+      span{
+        display: inline-block;
+        vertical-align: middle;
+        width: 4px;
+        height: 4px;
+        border-radius: 100%;
+        margin-bottom: 2px;
+        margin-right: 15px;
+      }
+      &:first-child  span{
+        border:1px solid #54c3fa;
+      }
+      &:last-child  span{
+        border:1px solid #2dbb55;
+      }
+      & span{
+        border:1px solid #ff5d25;
+      }
+      & span.snow{
+        border:1px solid #2F4F4F;
+      }
+    }
+  }
+  .bill{
+    border-top:1px solid #eee;
+    line-height: 40px;
+    & > .fr{
+      font-size: 12px;
+      color: #666;
+    }
+    .price{
+      font-size: 16px;
+      margin-left: 5px;
+    }
+  }
+  .opt{
+    background: #f8f8f8;
+    width: 100%;
+    height: 44px;
+    padding: 9.5px 0;
+    border-top: 1px solid #eee;
+    a{
+      width: 50%;
+      height: 25px;
+      line-height: 25px;
+      text-align: center;
+      font-size: 14px;
+      color: #333;
+      &.btn-refuse {
+        border-left: 1px solid #eee;
+        color: $highlight-color;
+      }
+    }
+  }
+  &.flight{
+    .content{
+      border-top: none;
+    }
+    .head{
+      background-image:linear-gradient(157deg, #41e1f2 0%, #5db5fd 50%);
+      & > .type i{
+        top:5px;
+        left: -14px;
+        transform: rotate(-45deg);
+        @include setIcon2x($imgURL_20170614 + '/tmc/schedule/icon-flight2x.png',56px,(56/22)*18px,center,center)
+      }
+    }
+  }
+  &.train{
+    .content{
+      border-top: none;
+    }
+    .head{
+      background-image:linear-gradient(155deg, #fd9062  0%, #fa5c5c 50%);
+      & > .type i{
+        top:2px;
+        left: -15px;
+        @include setIcon2x($imgURL_20170614 + '/tmc/schedule/icon-train2x.png',(38/15)*23px,38px,center,center)
+      }
+    }
+  }
+  &.hotel{
+    .content{
+      border-top: none;
+    }
+    .hotel-name{
+      font-weight: bold;
+      line-height: 20px;
+    }
+    .address{
+      margin-top: 10px;
+      font-size: 12px;
+      color: #999;
+      line-height: 15px;
+    }
+    .icon-pos{
+      @include setIcon2x($imgURL_20170614+'/tmc/schedule/icon-pos2x.png',7px,11px,center,center);
+      margin-right: 5px;
+    }
+    .head{
+      background-image:linear-gradient(157deg, #e1c697 0%, #c7a374 50%);
+      & > .type i{
+        top:2px;
+        left: -5px;
+        @include setIcon2x($imgURL_20170614 + '/tmc/schedule/icon-hotel2x.png',46px,45px,center,center)
+      }
+      & > .id{
+        float: right;
+      }
+    }
+  }
+  &.agree,
+  &.refuse{
+    .seal{
+      position: absolute;
+      top: 32px;
+      right: -15px;
+      opacity: .5;
+    }
+  }
+  &.agree .seal{
+    @include  setIcon2x($imgURL_20170620 + '/tmc/approve/seal-pass2x.png',109px,86px,center,center);
+  }
+  &.refuse .seal{
+    @include  setIcon2x($imgURL_20170620 + '/tmc/approve/seal-passnot2x.png',109px,86px,center,center);
+  }
+}
+
+.timeout .approve-con{
+  .head{
+    background-image:linear-gradient(157deg, #c4c4c4 0%, #9e9e9e 93%)!important;
+  }
+  .opt{
+    display: none!important;
+  }
+  .journey,
+  .bill .price{
+    color: #666;
+  }
+  .journey span{
+    background: #999;
+  }
+  .detail>.item span{
+    border-color: #999!important;
+  }
+}
