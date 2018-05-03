@@ -2,7 +2,7 @@
 * @Author: zoulin
 * @Date:   2018-04-28 11:04:01
 * @Last Modified by:   zoulin
-* @Last Modified time: 2018-05-02 19:28:08
+* @Last Modified time: 2018-05-03 13:24:14
 */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -11,10 +11,11 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = {
-    entry: path.resolve(__dirname, './src/index.js'), //指定入口文件，程序从这里开始编译,__dirname当前所在目录, ../表示上一级目录, ./同级目录
+    entry: path.resolve(__dirname, './src/index.js'),
     output: {
         path: path.resolve(__dirname, './dist'), // 输出的路径
-        filename: '[name].js'  // 打包后文件
+        filename: '[name].[chunkhash:8].bundle.js',
+        chunkFilename: '[name]-[id].[chunkhash:8].bundle.js',
     },
     module: {
         rules: [
@@ -49,10 +50,11 @@ module.exports = {
     },
     plugins: [
 　　 　　new HtmlWebpackPlugin({
+             title: '途牛商旅',
 　　　　 　　template: path.resolve(__dirname, './src/index.tpl.html'),
 　　　　　　 inject: true
 　　　　 }),
-         new ExtractTextPlugin("style.css"), //提取出来的样式放在style.css文件中
+         new ExtractTextPlugin("css/style.css"), //提取出来的样式放在style.css文件中
          new OptimizeCssAssetsPlugin({
               assetNameRegExp: /\.optimize\.(css|scss)$/g,
               cssProcessor: require('cssnano'),
