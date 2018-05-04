@@ -1,10 +1,16 @@
 import React from 'react'
 import { Switch, IndexRoute, Route, BrowserRouter } from 'react-router-dom'
-import App from '../container/App';
-import Home from '../container/Home';
-import Login from '../container/Login';
-import ResetPwd from '../container/ResetPwd';
-import NotFound from '../container/NotFound';
+import 'promise-polyfill';
+
+import Loadable from 'react-loadable'
+import Loading from '../container/Loading'
+
+const App = Loadable({loader: () => import('../container/App'),loading:Loading})
+const Home = Loadable({loader: () => import('../container/Home'),loading:Loading})
+const Login = Loadable({loader: () => import('../container/Login'),loading:Loading})
+const ResetPwd = Loadable({loader: () => import('../container/ResetPwd'),loading:Loading})
+const NotFound = Loadable({loader: () => import('../container/NotFound'),loading:Loading})
+
 
 
 class RouteMap extends React.Component {
@@ -13,9 +19,9 @@ class RouteMap extends React.Component {
             <BrowserRouter>
                 <Switch>
                 <Route path='/' exact component={App}></Route>
-                <Route path='/login' component={Login}></Route>
-                <Route path='/welcome' component={Home}></Route>
-                <Route path='/forget/psw' component={ResetPwd}></Route>
+                <Route path='/login' exact component={Login}></Route>
+                <Route path='/welcome' exact component={Home}></Route>
+                <Route path='/forget/psw' exact component={ResetPwd}></Route>
                 <Route path='/*' component={NotFound}></Route>
                 </Switch>
             </BrowserRouter>

@@ -1,1 +1,4 @@
 /node_modules/*
+/dist/css/*
+/dist/css/js
+/dist/index.html

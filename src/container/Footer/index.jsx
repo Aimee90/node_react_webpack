@@ -1,5 +1,7 @@
 
 import React from 'react'
+import NavFooter from './navfooter'
+
 
 class Footer extends React.Component{
 	render(){
@@ -10,4 +12,4 @@ class Footer extends React.Component{
 		)
 	}
 }
-export default Footer
+export {Footer, NavFooter}

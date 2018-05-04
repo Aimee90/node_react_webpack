@@ -2,20 +2,25 @@
 * @Author: zoulin
 * @Date:   2018-04-28 11:04:01
 * @Last Modified by:   zoulin
-* @Last Modified time: 2018-05-03 13:24:14
+* @Last Modified time: 2018-05-04 11:41:00
 */
+
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
+const ASSET_PATH = process.env.ASSET_PATH || '/';
+
 module.exports = {
     entry: path.resolve(__dirname, './src/index.js'),
     output: {
         path: path.resolve(__dirname, './dist'), // 输出的路径
-        filename: '[name].[chunkhash:8].bundle.js',
-        chunkFilename: '[name]-[id].[chunkhash:8].bundle.js',
+        publicPath: ASSET_PATH,
+        filename: 'js/[name].[chunkhash:8].js',
+        chunkFilename: 'js/[name].[chunkhash:8].chunk.js',
     },
     module: {
         rules: [
@@ -39,6 +44,10 @@ module.exports = {
                     use: ['css-loader','sass-loader']
                 }),
                 exclude: /node_modules/
+            },
+            {
+                test: /containers\/([^/]+)\/?([^/]*)\.jsx?$/,
+                include: path.resolve(__dirname, 'src/routers/'),
             }
         ]
     },
@@ -49,12 +58,15 @@ module.exports = {
         }
     },
     plugins: [
+         new webpack.DefinePlugin({
+            'process.env.ASSET_PATH': JSON.stringify(ASSET_PATH)
+         }),
 　　 　　new HtmlWebpackPlugin({
              title: '途牛商旅',
 　　　　 　　template: path.resolve(__dirname, './src/index.tpl.html'),
 　　　　　　 inject: true
 　　　　 }),
-         new ExtractTextPlugin("css/style.css"), //提取出来的样式放在style.css文件中
+         new ExtractTextPlugin("css/[name].[chunkhash:8].css"), //提取出来的样式放在style.css文件中
          new OptimizeCssAssetsPlugin({
               assetNameRegExp: /\.optimize\.(css|scss)$/g,
               cssProcessor: require('cssnano'),

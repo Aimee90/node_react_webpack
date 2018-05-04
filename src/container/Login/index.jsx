@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Link } from 'react-router-dom'
 
-import Footer from '../Footer'
+import { Footer } from '../Footer'
 // stylesheet
-import '../../styles/global-m.scss'
-import '../../styles/tmc/login.scss'
-
-// const tmcIcon = require('assets/tmclogo01.png');
+import '../../styles/tmc/login.scss' 
 
 // 登录信息
 class Login extends React.Component{
+	
+
 	render(){
 		return (
 			<div class="main-container">

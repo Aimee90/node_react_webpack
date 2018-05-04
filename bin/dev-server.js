@@ -2,7 +2,7 @@
 * @Author: zoulin
 * @Date:   2018-04-28 13:39:30
 * @Last Modified by:   zoulin
-* @Last Modified time: 2018-05-02 14:46:02
+* @Last Modified time: 2018-05-04 16:44:27
 */
 'use strict'
 const WebpackDevServer = require('webpack-dev-server');
