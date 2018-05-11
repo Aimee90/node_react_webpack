@@ -10,6 +10,8 @@ const Home = Loadable({loader: () => import('../container/Home'),loading:Loading
 const Login = Loadable({loader: () => import('../container/Login'),loading:Loading})
 const ResetPwd = Loadable({loader: () => import('../container/ResetPwd'),loading:Loading})
 const NotFound = Loadable({loader: () => import('../container/NotFound'),loading:Loading})
+/*flight pages*/
+const FlightIndex = Loadable({loader:()=>import('../container/productIndex/flight'),loading:Loading})
 
 
 
@@ -22,6 +24,8 @@ class RouteMap extends React.Component {
                 <Route path='/login' exact component={Login}></Route>
                 <Route path='/welcome' exact component={Home}></Route>
                 <Route path='/forget/psw' exact component={ResetPwd}></Route>
+                
+                <Route path='/flight' exact component={FlightIndex}></Route>
                 <Route path='/*' component={NotFound}></Route>
                 </Switch>
             </BrowserRouter>

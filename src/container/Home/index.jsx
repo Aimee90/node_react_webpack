@@ -18,7 +18,7 @@ class Menus extends React.Component{
 	  const url = props.url||'#'
 	  const type = props.type||'trip'
 	  const enable = props.enable||false
-	  const addable = props.addable||false 
+	  const addable = props.addable||false
 	  this.state = {
 		enable: enable,	//是否启用
 	  	url: url,	//默认跳转路径
@@ -60,8 +60,8 @@ export default class Home extends React.Component{
 					<Menus type="flight" url="/flight" enable="true" />
 					<Menus type="train" url="/train" enable="true" />
 					<Menus type="hotel" url="/hotel" enable="true" />
-				</div> 
-				<NavFooter active="home"/>
+				</div>
+				<NavFooter active='home'/>
 			</div>
 		)
 	}
